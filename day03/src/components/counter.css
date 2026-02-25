@@ -1,0 +1,23 @@
+.allBtn{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    background-color: aqua;
+    padding: 10px;
+}
+
+button{
+    width: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: bisque;
+}
+
+div{
+    background-color: azure;
+}

@@ -5,9 +5,9 @@ const TextUtils = () => {
 
     useEffect(() => {
         setText(localStorage.getItem("text") ?? "")
-        setCount(localStorage.getItem("count"))
-        setCountWord(localStorage.getItem("word "))
-        setSecond(localStorage.getItem("second "))
+        setCount(localStorage.getItem("count") ?? 0)
+        setCountWord(localStorage.getItem("word ") ?? 0)
+        setSecond(localStorage.getItem("second") ?? 0)
     }, [])
 
     const [text, setText] = useState("");

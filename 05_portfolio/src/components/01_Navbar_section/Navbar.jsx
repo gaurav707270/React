@@ -1,8 +1,9 @@
 
+
 export const Navbar = () => {
     return (
         <>
-            <div className=" container  mt-2">
+            <div className=" container  mt-2 d-none d-lg-block ">
 
                 <h2 className="text-white">
                     {"<Gaurav/>"}

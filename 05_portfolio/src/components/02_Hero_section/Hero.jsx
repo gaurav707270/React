@@ -7,7 +7,7 @@ export const Hero = () => {
             <div className="container mt-4 ">
                 <div className="w-100 d-flex justify-content-center rounded-circle   ">
 
-                    <img className='rounded-circle border border-3 border-primary' src={profile} style={{ height: 300, width: 300 }} alt="" />
+                    <img className='rounded-circle border border-3 border-primary' src={profile} style={{ height: 250, width: 250 }} alt="" />
                 </div>
 
                 <div>
@@ -32,6 +32,11 @@ export const Hero = () => {
                 </div>
 
             </div>
+
+            <div>
+                < hr className=' container border border-3 border-primary ' />
+            </div>
+
         </>
     )
 }

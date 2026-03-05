@@ -6,11 +6,10 @@ export const Education = () => {
                 <h2 className=" text-primary text-center m-3"> Education</h2>
 
                 <div className="d-flex ">
-                    <div className="w-50">
-                        <h3 className="text-white">B-Tech in Information Technology</h3>
-                        <p className="fs-4 text-light">bhagwan arihant institute of technology</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi sint nemo cumque quas vel praesentium amet labore tenetur nostrum. Numquam quam veritatis sapiente saepe? Hic corporis aspernatur atque esse aliquid?
-                        </p>
+                    <div className="w-50 mt-2">
+                        <h3 className="text-white">Bachelor of Technology (B.Tech) – Information Technology</h3>
+                        <p className="fs-4 text-light">Bhagwan Arihant Institute of Technology</p>
+                        <p className="text-white">CGPA: 6.8 | Year: 2022 – 2026 (Currently Pursuing)</p>
 
                     </div>
                     <div className=" w-50  text-end ">
@@ -19,28 +18,28 @@ export const Education = () => {
                 </div>
 
                 <div className="d-flex ">
-                    <div className="w-50">
-                        <h3 className="text-white">B-Tech in Information Technology</h3>
-                        <p className="fs-4 text-light">bhagwan arihant institute of technology</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi sint nemo cumque quas vel praesentium amet labore tenetur nostrum. Numquam quam veritatis sapiente saepe? Hic corporis aspernatur atque esse aliquid?
+                    <div className="w-50 mt-2">
+                        <h3 className="text-white">Higher Secondary Education (12th)</h3>
+                        <p className="fs-4 text-light">Shri Shivaji High School</p>
+                        <p className="text-white">Percentage: 80.17%
                         </p>
 
                     </div>
                     <div className=" w-50  text-end ">
-                        <p className="fs-5 text-light">2026</p>
+                        <p className="fs-5 text-light">2022</p>
                     </div>
                 </div>
 
                 <div className="d-flex ">
-                    <div className="w-50">
-                        <h3 className="text-white">B-Tech in Information Technology</h3>
-                        <p className="fs-4 text-light">bhagwan arihant institute of technology</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi sint nemo cumque quas vel praesentium amet labore tenetur nostrum. Numquam quam veritatis sapiente saepe? Hic corporis aspernatur atque esse aliquid?
+                    <div className="w-50 mt-2">
+                        <h3 className="text-white">Secondary School Education (10th)</h3>
+                        <p className="fs-4 text-light">Shri Shivaji High School</p>
+                        <p className="text-white">Percentage: 89.00%
                         </p>
 
                     </div>
                     <div className=" w-50  text-end ">
-                        <p className="fs-5 text-light">2026</p>
+                        <p className="fs-5 text-light">2020</p>
                     </div>
                 </div>
 

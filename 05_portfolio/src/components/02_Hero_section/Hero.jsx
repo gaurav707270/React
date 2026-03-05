@@ -22,7 +22,7 @@ export const Hero = () => {
                         </p>
 
                         <div className='text-center text-light d-flex justify-content-center' >
-                            <p className='w-50'>I enjoy solving complex problems. Frequently praised as detail-oriented by my peers, I can be relied upon to help your company achieve its goals by providing sustainable and scalable solutions.</p>
+                            <p className='w-50 text-secondary'>I enjoy solving complex problems. Frequently praised as detail-oriented by my peers, I can be relied upon to help your company achieve its goals by providing sustainable and scalable solutions.</p>
                         </div>
                         <div>
                             <button type="button" className="btn btn-primary m-1"><i className="ri-question-answer-line m-1"></i>GET IN TOUCH </button>

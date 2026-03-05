@@ -18,7 +18,7 @@ export const Contact = () => {
 
                     {/* Contact Info */}
                     <div className="col-md-5">
-                        <div className="bg-black border border-secondary p-4 rounded h-100">
+                        <div className="bg-black border border-primary p-4 rounded h-100">
                             <h5 className="fw-bold mb-3 text-white">Get in Touch</h5>
                             <p className="mb-2">
                                 <strong>Email:</strong> sachinkharate2004.com
@@ -37,7 +37,7 @@ export const Contact = () => {
 
                     {/* Contact Form */}
                     <div className="col-md-7">
-                        <div className="bg-black border border-secondary p-4 rounded">
+                        <div className="bg-black border border-primary p-4 rounded">
                             <form>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
@@ -46,7 +46,7 @@ export const Contact = () => {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control bg-dark text-light border-secondary"
+                                            className="form-control bg-dark text-light border-primary"
                                             placeholder="Enter first name"
                                         />
                                     </div>
@@ -57,7 +57,7 @@ export const Contact = () => {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control bg-dark text-light border-secondary"
+                                            className="form-control bg-dark text-light border-primary"
                                             placeholder="Enter last name"
                                         />
                                     </div>
@@ -69,7 +69,7 @@ export const Contact = () => {
                                     </label>
                                     <input
                                         type="email"
-                                        className="form-control bg-dark text-light border-secondary"
+                                        className="form-control bg-dark text-light border-primary"
                                         placeholder="Enter email"
                                     />
                                 </div>
@@ -80,7 +80,7 @@ export const Contact = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control bg-dark text-light border-secondary"
+                                        className="form-control bg-dark text-light border-primary"
                                         placeholder="Enter subject"
                                     />
                                 </div>
@@ -90,7 +90,7 @@ export const Contact = () => {
                                         Message
                                     </label>
                                     <textarea
-                                        className="form-control bg-dark text-light border-secondary"
+                                        className="form-control bg-dark text-light border-primary"
                                         rows="4"
                                         placeholder="Enter your message"
                                     ></textarea>
@@ -98,7 +98,7 @@ export const Contact = () => {
 
                                 <button
                                     type="submit"
-                                    className="btn btn-outline-light w-100"
+                                    className="btn btn-outline-primary w-100"
                                 >
                                     Send Message
                                 </button>

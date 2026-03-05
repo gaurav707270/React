@@ -3,9 +3,9 @@ import "./Navbar.css";
 export const Navbar = () => {
     return (
         <>
-            <div className=" container  mt-2 d-none d-lg-block ">
+            <div className=" container  mt-2 d-none d-lg-block  ">
 
-                <h2 className=" bg-white">
+                <h2 className=" bg-white px-2">
                     <div className="spinner-border spinner-border-sm  " role="status">
                         <span className="visually-hidden  ">Loading...</span>
                     </div>

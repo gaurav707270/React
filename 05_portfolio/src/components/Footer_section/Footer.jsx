@@ -49,9 +49,9 @@ export const Footer = () => {
                     </div>
 
                     <div className=" container text-end">
-                        <i className="ri-github-fill  text-primary  fs-2 "> <a href="#"></a></i>
+                        <i className="ri-github-fill  text-primary  fs-2 "> <a href="https://github.com/gaurav707270"></a></i>
                         <i className="ri-instagram-fill  text-primary m-1 fs-2"><a href="#"></a></i>
-                        <i className="ri-linkedin-fill  text-primary m-1 fs-2"><a href="#"></a></i>
+                        <i className="ri-linkedin-fill  text-primary m-1 fs-2"><a href="https://www.linkedin.com/in/kharategaurav7072/"></a></i>
                     </div>
 
 

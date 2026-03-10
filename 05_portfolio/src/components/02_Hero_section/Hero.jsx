@@ -15,10 +15,20 @@ export const Hero = () => {
                         <h1 className='text-center text-light'>Hi, I'm Gaurav</h1>
                         <h3 className='text-center text-light mt-3'>A fullstack developer</h3>
 
-                        <p className=" text-center">
-                            <i className="ri-github-fill  text-light  fs-2 "> <a href="https://github.com/gaurav707270"></a></i>
-                            <i className="ri-instagram-fill  text-light m-1 fs-2"><a href="#"></a></i>
-                            <i className="ri-linkedin-fill  text-light m-1 fs-2"><a href="https://www.linkedin.com/in/kharategaurav7072/"></a></i>
+                        <p className="text-center ">
+
+                            <a class="text-decoration-none" href="https://github.com/gaurav707270" target="_blank">
+                                <i className="ri-github-fill text-light fs-2"></i>
+                            </a>
+
+                            <a class="text-decoration-none" href="https://www.instagram.com/" target="_blank">
+                                <i className="ri-instagram-fill text-light m-1 fs-2"></i>
+                            </a>
+
+                            <a class="text-decoration-none" href="https://www.linkedin.com/in/kharategaurav7072/" target="_blank">
+                                <i className="ri-linkedin-fill text-light m-1 fs-2"></i>
+                            </a>
+
                         </p>
 
                         <div className='text-center text-light d-flex justify-content-center' >

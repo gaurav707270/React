@@ -27,7 +27,7 @@ export const Contact = () => {
                                 <strong>Phone:</strong> +91 930 996 8779
                             </p>
                             <p className="mb-2">
-                                <strong>Address:</strong> Surat , GUjrat
+                                <strong>Address:</strong> Surat , Gujrat
                             </p>
                             <p className="mb-0">
                                 <strong>Hours:</strong> Mon - Fri, 9AM - 6PM

@@ -2,7 +2,7 @@
 export const Education = () => {
     return (
         <>
-            <div className=" container">
+            <div className=" container" id="eduction" >
                 <h2 className=" text-primary text-center m-3"> Education</h2>
 
                 <div className="d-flex ">

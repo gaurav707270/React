@@ -24,23 +24,23 @@ export const Navbar = () => {
                 <ul className=" navbar nav nav-tabs d-flex justify-content-end text-black">
 
                     <li className="nav-item">
-                        <a className="nav-link" href="#">HOMES</a>
+                        <a className="nav-link" href="#home">HOMES</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">ABOUT</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">EDUCTION</a>
+                        <a className="nav-link" href="#eduction">EDUCTION</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#"> SKILLS</a>
+                        <a className="nav-link" href="#skills"> SKILLS</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#"> PROJECTS</a>
+                        <a className="nav-link" href="#projects"> PROJECTS</a>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="#">CONTACT </a>
+                        <a className="nav-link" href="#contact">CONTACT </a>
                     </li>
 
                 </ul>

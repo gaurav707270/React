@@ -9,7 +9,7 @@ import Todu from "../../assets/Todu list.png";
 export const Projects = () => {
     return (
         <>
-            <div className='container'>
+            <div className='container' id="projects" >
                 <h2 className=" text-primary text-center m-3"> Projects</h2>
 
                 <div className='d-flex justify-content-evenly row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4'>

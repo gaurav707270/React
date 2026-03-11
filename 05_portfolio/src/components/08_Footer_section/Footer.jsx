@@ -17,49 +17,49 @@ export const Footer = () => {
 
                 <div className="d-flex container">
 
-                    <div className="container text-start text-secondary">
+                    <div className="container text-start text-white fs-4">
                         © 2025 Company, Inc
                     </div>
 
                     <div className="w-100  d-flex justify-content-evenly">
-                        <div class="spinner-grow text-primary" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-grow text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
-                        <div class="spinner-grow text-secondary" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-grow text-secondary" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
-                        <div class="spinner-grow text-success" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-grow text-success" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
-                        <div class="spinner-grow text-danger" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-grow text-danger" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
-                        <div class="spinner-grow text-warning" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-grow text-warning" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
-                        <div class="spinner-grow text-info" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-grow text-info" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
-                        <div class="spinner-grow text-light" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-grow text-light" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
-                        <div class="spinner-grow text-dark" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-grow text-dark" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
                     </div>
 
                     <div className=" container text-end">
                         <p>
 
-                            <a class="text-decoration-none" href="https://github.com/gaurav707270" target="_blank">
+                            <a className="text-decoration-none" href="https://github.com/gaurav707270" target="_blank">
                                 <i className="ri-github-fill text-light fs-2"></i>
                             </a>
 
-                            <a class="text-decoration-none" href="https://www.instagram.com/" target="_blank">
+                            <a className="text-decoration-none" href="https://www.instagram.com/" target="_blank">
                                 <i className="ri-instagram-fill text-light m-1 fs-2"></i>
                             </a>
 
-                            <a class="text-decoration-none" href="https://www.linkedin.com/in/kharategaurav7072/" target="_blank">
+                            <a className="text-decoration-none" href="https://www.linkedin.com/in/kharategaurav7072/" target="_blank">
                                 <i className="ri-linkedin-fill text-light m-1 fs-2"></i>
                             </a>
 

@@ -8,7 +8,7 @@ export const Contact = () => {
                 <div className="row mb-4 text-center">
                     <div className="col">
                         <h2 className="fw-bold text-primary">Contact Us</h2>
-                        <p className="text-secondary">
+                        <p className="text-white">
                             We would love to hear from you!
                         </p>
                     </div>
@@ -19,17 +19,17 @@ export const Contact = () => {
                     {/* Contact Info */}
                     <div className="col-md-5">
                         <div className="bg-black border border-primary p-4 rounded h-100">
-                            <h5 className="fw-bold mb-3 text-white">Get in Touch</h5>
-                            <p className="mb-2">
+                            <h5 className="fw-bold mb-3 text-white fs-3">Get in Touch</h5>
+                            <p className="mb-2 fs-5">
                                 <strong>Email:</strong> sachinkharate2004.com
                             </p>
-                            <p className="mb-2">
+                            <p className="mb-2 fs-5">
                                 <strong>Phone:</strong> +91 930 996 8779
                             </p>
-                            <p className="mb-2">
+                            <p className="mb-2 fs-5">
                                 <strong>Address:</strong> Surat , Gujrat
                             </p>
-                            <p className="mb-0">
+                            <p className="mb-0 fs-5">
                                 <strong>Hours:</strong> Mon - Fri, 9AM - 6PM
                             </p>
                         </div>

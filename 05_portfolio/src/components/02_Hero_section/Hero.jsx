@@ -17,22 +17,22 @@ export const Hero = () => {
 
                         <p className="text-center ">
 
-                            <a class="text-decoration-none" href="https://github.com/gaurav707270" target="_blank">
+                            <a className="text-decoration-none" href="https://github.com/gaurav707270" target="_blank">
                                 <i className="ri-github-fill text-light fs-2"></i>
                             </a>
 
-                            <a class="text-decoration-none" href="https://www.instagram.com/" target="_blank">
+                            <a className="text-decoration-none" href="https://www.instagram.com/" target="_blank">
                                 <i className="ri-instagram-fill text-light m-1 fs-2"></i>
                             </a>
 
-                            <a class="text-decoration-none" href="https://www.linkedin.com/in/kharategaurav7072/" target="_blank">
+                            <a className="text-decoration-none" href="https://www.linkedin.com/in/kharategaurav7072/" target="_blank">
                                 <i className="ri-linkedin-fill text-light m-1 fs-2"></i>
                             </a>
 
                         </p>
 
-                        <div className='text-center text-light d-flex justify-content-center' >
-                            <p className='w-50 text-secondary'>I enjoy solving complex problems. Frequently praised as detail-oriented by my peers, I can be relied upon to help your company achieve its goals by providing sustainable and scalable solutions.</p>
+                        <div className='text-center t d-flex justify-content-center' >
+                            <p className='w-50 text-secondary text-white fs-5'>I enjoy solving complex problems. Frequently praised as detail-oriented by my peers, I can be relied upon to help your company achieve its goals by providing sustainable and scalable solutions.</p>
                         </div>
                         <div>
                             <button type="button" className="btn btn-primary m-1"><i className="ri-question-answer-line m-1"  ></i> <a className='text-decoration-none text-white' href="#contact">GET IN TOUCH</a> </button>

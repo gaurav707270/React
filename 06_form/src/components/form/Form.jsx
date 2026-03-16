@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 
 export const Form = () => {
     const [user, setUser] = useState({});
+    const [check, setcheck] = useState(false);
 
     const handleSubmit = () => {
-        localStorage.setItem("user",    JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify(user));
         alert("info submited");
     }
 
@@ -76,12 +77,12 @@ export const Form = () => {
                             />
                         </div>
                         <div className="mb-3 form-check">
-                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                            <input type="checkbox" checked={check} onChange={() => setcheck(!check)} className="form-check-input" id="exampleCheck1" />
                             <label className="form-check-label" htmlFor="exampleCheck1">
-                                Check me out
+                                Check After Reading All Term & Condition
                             </label>
                         </div>
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className={`btn btn-primary ${check ? "" : "disabled"}`}>
                             Submit
                         </button>
                     </form>

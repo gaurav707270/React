@@ -3,6 +3,7 @@ import { Navbar } from "./components/navbar/Navbar";
 import { Form } from './components/form/Form'
 import { Users } from "./components/users/Users";
 import { Routes, Route } from "react-router";
+import { Home } from './components/home/Home';
 
 
 export const App = () => {
@@ -13,6 +14,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Form />} />
         <Route path='/users' element={<Users />} />
+        <Route path='/home' element={<Home />} />
 
       </Routes>
 

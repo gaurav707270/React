@@ -5,7 +5,7 @@ export const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <a className="navbar-brand fs-3" href="#">
+                    <a className="navbar-brand fs-3" href="/">
                         <i class="ri-survey-line"></i>Form
                     </a>
                     <button

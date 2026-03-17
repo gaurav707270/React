@@ -1,20 +1,37 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router";
 
 export const Form = () => {
+
+    const navigate = useNavigate();
     const [user, setUser] = useState({});
     const [check, setcheck] = useState(false);
 
-    const handleSubmit = () => {
-        localStorage.setItem("user", JSON.stringify(user));
-        alert("info submited");
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if (user.name == undefined || user.name == "") {
+            alert("The Name Required !")
+        }
+        else if (user.number == 10 || user.number == "" || user.number == undefined) {
+            alert("Enter The Vailded Number")
+        }
+        else if (user.password <= 6 || user.password >= 6) {
+            user.password
+        }
+        else {
+            localStorage.setItem("user", JSON.stringify(user));
+            alert("info submited");
+            navigate("/home");
+        }
     }
 
     return (
         <>
-            <div className='container d-flex justify-content-center  align-items-center vh-100'>
-                <div className=' w-50 d-flex justify-content-center align-items-center '>
+            <div className='container d-flex justify-content-center  align-items-center vh-100 '>
+                <div className=' w-50 d-flex justify-content-center align-items-center'>
 
-                    <form onSubmit={handleSubmit} className=' w-75 shadow p-3 '>
+                    <form onSubmit={handleSubmit} className=' w-75 shadow p-3 rounded rounded-4'>
                         <div className="mb-3">
 
                             {/*Full name*/}

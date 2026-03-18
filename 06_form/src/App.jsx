@@ -1,8 +1,9 @@
 import './App.css'
+
+import { Routes, Route } from "react-router";
 import { Navbar } from "./components/navbar/Navbar";
 import { Form } from './components/form/Form'
 import { Users } from "./components/users/Users";
-import { Routes, Route } from "react-router";
 import { Home } from './components/home/Home';
 
 

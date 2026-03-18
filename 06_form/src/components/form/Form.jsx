@@ -10,18 +10,52 @@ export const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (user.name == undefined || user.name == "") {
-            alert("The Name Required !")
+        const nameRegex = /^[A-Za-z ]{3,}$/;
+        const phoneRegex = /^[0-9]{10}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+        if (!user.name || user.name.trim() === "") {
+            alert("Name is required!");
+            return false;
         }
-        else if (user.number == 10 || user.number == "" || user.number == undefined) {
-            alert("Enter The Vailded Number")
+        else if (!nameRegex.test(user.name)) {
+            alert("Name must contain only letters (min 3 characters)");
+            return false;
         }
-        else if (user.password <= 6 || user.password >= 6) {
-            user.password
+
+
+        if (!user.number || user.number.trim() === "") {
+            alert("Phone number is required!");
+            return false;
         }
+        else if (!phoneRegex.test(user.number)) {
+            alert("Enter a valid 10-digit number!");
+            return false;
+        }
+
+        if (!user.password || user.password.trim() === "") {
+            alert("Password is required!");
+            return false;
+        }
+        else if (!passwordRegex.test(user.password)) {
+            alert("Password must be at least 6 characters, include uppercase, lowercase, and number");
+            return false;
+        }
+
         else {
-            localStorage.setItem("user", JSON.stringify(user));
-            alert("info submited");
+
+            //     // localStorage.setItem("user", JSON.stringify(user));
+            //     // alert("Form Submitted Successfully ✅");
+            //     // navigate("/home");
+
+
+            const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+            const updatedUsers = [...existingUsers, user];
+
+            localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+            alert("Form Submitted Successfully ✅");
             navigate("/home");
         }
     }

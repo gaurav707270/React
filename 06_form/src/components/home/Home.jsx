@@ -13,7 +13,7 @@ export const Home = () => {
     <div className="container mt-5 rounded rounded-4 ">
       <h2 className="text-center mb-4">All Users</h2>
 
-      <div className=' shadow'>
+      <div className=' shadow rounded rounded-4 bg-amber-50 p-4'>
         <table className="table table-bordered  ">
           <thead >
             <tr>

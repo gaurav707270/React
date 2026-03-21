@@ -6,16 +6,20 @@ export const Form = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState({});
     const [check, setcheck] = useState(false);
+    const [style, setstyle] = useState({ name: false, email: false, number: false, password: false, })
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         const nameRegex = /^[A-Za-z ]{3,}$/;
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         const phoneRegex = /^[0-9]{10}$/;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
 
         if (!user.name || user.name.trim() === "") {
+            setstyle({ ...style, name: true })
             alert("Name is required!");
+
             return false;
         }
         else if (!nameRegex.test(user.name)) {
@@ -23,8 +27,21 @@ export const Form = () => {
             return false;
         }
 
+        if (!user.email || user.email.trim() === "") {
+            setstyle({ ...style, email: true })
+            alert("Email is required !")
+            return false;
+
+        }
+
+        else if (!emailRegex.test(user.email)) {
+            alert("email must stornge ")
+            return false;
+        }
+
 
         if (!user.number || user.number.trim() === "") {
+            setstyle({ ...style, number: true })
             alert("Phone number is required!");
             return false;
         }
@@ -34,6 +51,7 @@ export const Form = () => {
         }
 
         if (!user.password || user.password.trim() === "") {
+            setstyle({ ...style, number: true })
             alert("Password is required!");
             return false;
         }
@@ -75,7 +93,7 @@ export const Form = () => {
                             <input
                                 onChange={(e) => setUser({ ...user, name: e.target.value })}
                                 type="text"
-                                className="form-control"
+                                className={`form-control ${style.name == false ? "" : " border-danger"}`}
                                 id="name"
                                 aria-describedby="emailHelp"
                             />
@@ -89,7 +107,7 @@ export const Form = () => {
                             <input
                                 onChange={(e) => setUser({ ...user, email: e.target.value })}
                                 type="email"
-                                className="form-control"
+                                className={`form-control ${style.email == false ? "" : " border-danger"}`}
                                 id="email"
                                 aria-describedby="emailHelp"
                             />
@@ -106,7 +124,7 @@ export const Form = () => {
                             <input
                                 onChange={(e) => setUser({ ...user, number: e.target.value })}
                                 type="Number"
-                                className="form-control"
+                                className={`form-control ${style.number == false ? "" : " border-danger"}`}
                                 id="number"
                                 aria-describedby="emailHelp"
                             />

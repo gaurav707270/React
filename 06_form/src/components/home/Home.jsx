@@ -10,41 +10,48 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="container mt-5 rounded rounded-4 ">
+
+    <div className="container mt-5 rounded rounded-4">
       <h2 className="text-center mb-4">All Users</h2>
 
-      <div className=' shadow rounded rounded-4 bg-amber-50 p-4'>
-        <table className="table table-bordered  ">
-          <thead >
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Contact</th>
-              <th>Password</th>
-            </tr>
-          </thead>
+      <div className="shadow rounded rounded-4 bg-amber-50 p-4">
 
-          <tbody >
-            {users.length > 0 ? (
-              users.map((user, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>{user.number}</td>
-                  <td>{user.password}</td>
-                </tr>
-              ))
-            ) : (
+
+        <div style={{ maxHeight: "470px", overflowY: "auto" }}>
+
+          <table className="table table-bordered">
+            <thead className="table-dark sticky-top">
               <tr>
-                <td colSpan="5" className="text-center">
-                  No Users Found ❌
-                </td>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Password</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {users.length > 0 ? (
+                users.map((user, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>{user.number}</td>
+                    <td>{user.password}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="5" className="text-center">
+                    No Users Found ❌
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+
+        </div>
       </div>
     </div>
   );

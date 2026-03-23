@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 export const Home = () => {
 
   const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -12,6 +13,50 @@ export const Home = () => {
   return (
 
     <div className="container mt-5 rounded rounded-4">
+
+      <div style={{ width: 500 }}>
+        <div className="input-group mb-3">
+          <input
+
+            onChange={(e) => {
+              setSearch(e.target.value)
+            }}
+            style={{ width: 300 }}
+            value={search}
+            type="text"
+            id='input'
+            className="form-control border border-black"
+            aria-label="Recipient’s username"
+            aria-describedby="button-addon2"
+          />
+          <button
+
+            onClick={() => {
+              setUsers(users.filter((user) => user.name.toLowerCase() === search.toLowerCase() || user.email.toLowerCase() === search.toLowerCase() || user.number === search))
+            }}
+            className="btn btn-outline-primary"
+            type="button"
+            id="search"
+          >
+            Search
+          </button>
+
+          <button
+
+            onClick={() => {
+              setUsers(JSON.parse(localStorage.getItem("users")))
+              setSearch("")
+            }}
+            className="btn btn-outline-danger"
+            type="button"
+            id="search"
+          >
+            Clear
+          </button>
+
+        </div>
+
+      </div>
       <h2 className="text-center mb-4">All Users</h2>
 
       <div className="shadow rounded rounded-4 bg-amber-50 p-4">

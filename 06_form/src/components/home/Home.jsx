@@ -13,7 +13,7 @@ export const Home = () => {
 
   return (
 
-    <div className="container mt-5 rounded rounded-4">
+    <div className="container mt-5 rounded rounded-4 shadow">
 
       <div style={{ width: 500 }}>
         <div className="input-group mb-3">
@@ -62,9 +62,9 @@ export const Home = () => {
               const arr = [...users];
 
               if (check) {
-                arr.sort((a, b) => a.fees - b.fees); 
+                arr.sort((a, b) => a.fees - b.fees);
               } else {
-                arr.sort((a, b) => b.fees - a.fees); 
+                arr.sort((a, b) => b.fees - a.fees);
               }
 
               setUsers(arr);

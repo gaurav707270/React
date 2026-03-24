@@ -90,11 +90,11 @@ export const Form = () => {
     }
 
     return (
-        <>
-            <div className='container d-flex justify-content-center  align-items-center vh-75 mt-5 '>
+        < >
+            <div className='container-fluid d-flex justify-content-center  align-items-center vh-75 mt-5   '>
                 <div className=' w-50 d-flex justify-content-center align-items-center '>
 
-                    <form style={{ width: 450, }} onSubmit={handleSubmit} className=' shadow p-3 rounded rounded-4'>
+                    <form style={{ width: 450, }} onSubmit={handleSubmit} className=' shadow p-3 rounded rounded-4 bg-white'>
                         <div className="mb-3">
 
                             {/*Full name*/}
@@ -111,7 +111,7 @@ export const Form = () => {
                         </div>
 
                         {/* Email  */}
-                        <div className="mb-3">
+                        <div className="mb-3 bg-white">
                             <label htmlFor="email" className="form-label">
                                 Email address
                             </label>

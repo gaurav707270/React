@@ -3,10 +3,10 @@ import React from 'react'
 export const Navbar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="container-fluid">
-                    <a className="navbar-brand fs-3" href="/">
-                        <i class="ri-survey-line"></i>Form
+            <nav className="navbar navbar-expand-lg  text-white bg-secondary">
+                <div className="container-fluid ">
+                    <a className="navbar-brand fs-3 text-white" href="/">
+                        <i class="ri-survey-line text-white"></i>Form
                     </a>
                     <button
                         className="navbar-toggler"
@@ -24,18 +24,13 @@ export const Navbar = () => {
                             <a className="nav-link active" aria-current="page" href="/">
 
                             </a>
-                            <a className="nav-link active" aria-current="page" href="/home">
+                            <a className="nav-link active text-white" aria-current="page" href="/home">
                                 Home
                             </a>
-                            <a className="nav-link" href="/users">
+                            <a className="nav-link active text-white" href="/users">
                                 Users
                             </a>
-                            <a className="nav-link" href="#">
-                                Pricing
-                            </a>
-                            <a className="nav-link " aria-disabled="true">
-                                Disabled
-                            </a>
+
                         </div>
                     </div>
                 </div>

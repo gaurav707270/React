@@ -76,18 +76,18 @@ export const Users = () => {
                 </div>
             </div>
 
-            <div className="container d-flex flex-wrap justify-content-center">
+            <div style={{ maxHeight: "550px", overflowY: "auto" }} className="container d-flex flex-wrap justify-content-center ">
                 {
                     users.map((user, i) => (
-                        <div key={i} className=' shadow rounded  p-3 m-3'>
+                        <div style={{ width: 800 }} key={i} className=' shadow rounded  p-3 m-3'>
                             <h1 >{user.name}</h1>
                             <p>{user.email} </p>
                             <h4 >  {user.password}</h4>
                             <h5>{user.number}</h5>
                             <h5 >{user.fees}</h5>
-                            {/* <div>
-                            <button className='btn btn-danger'>delete</button>
-                        </div> */}
+                            <div>
+                                <button className='btn btn-danger w-100'>delete</button>
+                            </div>
                         </div>
 
                     ))

@@ -14,7 +14,7 @@ export const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Form />} />
-        <Route path='/users' element={<Users />} />
+        <Route path='/Users' element={<Users />} />
         <Route path='/home' element={<Home />} />
 
       </Routes>

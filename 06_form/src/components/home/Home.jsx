@@ -4,6 +4,7 @@ export const Home = () => {
 
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("")
+  const [check, setcheck] = useState(true)
 
   useEffect(() => {
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -21,13 +22,14 @@ export const Home = () => {
             onChange={(e) => {
               setSearch(e.target.value)
             }}
-            style={{ width: 300 }}
+            style={{ width: 100 }}
             value={search}
             type="text"
             id='input'
             className="form-control border border-black"
             aria-label="Recipient’s username"
             aria-describedby="button-addon2"
+            placeholder=' Search User'
           />
           <button
 
@@ -54,6 +56,26 @@ export const Home = () => {
             Clear
           </button>
 
+
+          <button
+            onClick={() => {
+              const arr = [...users];
+
+              if (check) {
+                arr.sort((a, b) => a.fees - b.fees); 
+              } else {
+                arr.sort((a, b) => b.fees - a.fees); 
+              }
+
+              setUsers(arr);
+              setcheck(!check);
+            }}
+            className="btn btn-outline-info"
+            type="button"
+          >
+            {check ? "Low to High" : "High to Low"}
+          </button>
+
         </div>
 
       </div>
@@ -71,6 +93,7 @@ export const Home = () => {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Contact</th>
+                <th>Fees</th>
                 <th>Password</th>
               </tr>
             </thead>
@@ -83,6 +106,7 @@ export const Home = () => {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>{user.number}</td>
+                    <td>{user.fees}</td>
                     <td>{user.password}</td>
                   </tr>
                 ))
@@ -98,6 +122,6 @@ export const Home = () => {
 
         </div>
       </div>
-    </div>
+    </div >
   );
 };

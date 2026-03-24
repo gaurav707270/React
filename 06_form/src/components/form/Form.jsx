@@ -6,7 +6,7 @@ export const Form = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState({});
     const [check, setcheck] = useState(false);
-    const [style, setstyle] = useState({ name: false, email: false, number: false, password: false, })
+    const [style, setstyle] = useState({ name: false, email: false, number: false, fees: false, password: false, })
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -14,6 +14,7 @@ export const Form = () => {
         const nameRegex = /^[A-Za-z ]{3,}$/;
         const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         const phoneRegex = /^[0-9]{10}$/;
+        const feesRegex = /^(100[1-9]|10[1-9]\d|1[1-9]\d{2}|[2-9]\d{3,})$/;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
 
         if (!user.name || user.name.trim() === "") {
@@ -36,6 +37,16 @@ export const Form = () => {
 
         else if (!emailRegex.test(user.email)) {
             alert("email must stornge ")
+            return false;
+        }
+
+        if (!user.fees || user.fees.trim() === "") {
+            setstyle({ ...style, fees: true })
+            alert("fees is required!");
+            return false;
+        }
+        else if (!feesRegex.test(user.number)) {
+            alert("Enter a valid fees greater than 1000!");
             return false;
         }
 
@@ -80,10 +91,10 @@ export const Form = () => {
 
     return (
         <>
-            <div className='container d-flex justify-content-center  align-items-center vh-100 '>
-                <div className=' w-50 d-flex justify-content-center align-items-center'>
+            <div className='container d-flex justify-content-center  align-items-center vh-75 mt-5 '>
+                <div className=' w-50 d-flex justify-content-center align-items-center '>
 
-                    <form onSubmit={handleSubmit} className=' w-75 shadow p-3 rounded rounded-4'>
+                    <form style={{ width: 450, }} onSubmit={handleSubmit} className=' shadow p-3 rounded rounded-4'>
                         <div className="mb-3">
 
                             {/*Full name*/}
@@ -129,8 +140,23 @@ export const Form = () => {
                                 aria-describedby="emailHelp"
                             />
                             <div id="emailHelp" className="form-text">
-                                We'll never share your email with anyone else.
+                                We'll never share your contact with anyone else.
                             </div>
+                        </div>
+
+                        {/* fees */}
+                        <div className="mb-3">
+                            <label htmlFor="fees" className="form-label">
+                                Fees
+                            </label>
+                            <input
+                                onChange={(e) => setUser({ ...user, fees: e.target.value })}
+                                type="Number"
+                                className={`form-control ${style.fees == false ? "" : " border-danger"}`}
+                                id="fees"
+                                aria-describedby="emailHelp"
+                            />
+
                         </div>
 
                         {/* password */}

@@ -27,7 +27,7 @@ export const Navbar = () => {
                             <a className="nav-link active" aria-current="page" href="/home">
                                 Home
                             </a>
-                            <a className="nav-link" href="/user">
+                            <a className="nav-link" href="/users">
                                 Users
                             </a>
                             <a className="nav-link" href="#">

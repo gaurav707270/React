@@ -10,6 +10,15 @@ export const Users = () => {
         setUsers(storedUsers);
     }, []);
 
+    const handleDelete = (index) => {
+        const updatedUsers = users.filter((_, i) => i !== index);
+
+        setUsers(updatedUsers);
+
+
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+    };
+
     return (
         <div className=' container mt-5'>
             <div style={{ width: 500 }}>
@@ -85,9 +94,11 @@ export const Users = () => {
                             <h4 >  {user.password}</h4>
                             <h5>{user.number}</h5>
                             <h5 >{user.fees}</h5>
-                            <div>
-                                <button className='btn btn-danger w-100'>delete</button>
-                            </div>
+                            <button
+                                onClick={() => handleDelete(i)}
+                                className='btn btn-danger w-100'>
+                                delete
+                            </button>
                         </div>
 
                     ))

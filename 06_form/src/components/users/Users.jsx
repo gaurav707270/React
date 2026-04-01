@@ -11,7 +11,7 @@ export const Users = () => {
     }, []);
 
     const handleDelete = (index) => {
-        const updatedUsers = users.filter((_, i) => i !== index);
+        const updatedUsers = users.filter((i) => i !== index);
 
         setUsers(updatedUsers);
 

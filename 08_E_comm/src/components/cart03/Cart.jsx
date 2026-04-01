@@ -4,6 +4,12 @@ export default function Cart() {
 
   const [products, setProducts] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
+  const removeCart = () => {
+    const [carts, setCarts] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+
+    
+  }
+
 
   return (
     <>

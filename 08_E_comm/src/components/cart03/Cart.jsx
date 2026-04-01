@@ -7,7 +7,7 @@ export default function Cart() {
   const removeCart = () => {
     const [carts, setCarts] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
-    
+
   }
 
 
@@ -20,7 +20,7 @@ export default function Cart() {
               <div key={i} className="card m-2 " style={{ width: 250, height: 400 }}>
                 <img style={{ height: 200 }} src={product.images[0]} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
+                  <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.category}</p>
                   <p className="card-text"> ${product.price}</p>
                   <button href="#" onClick={() => addTOCart(product)} className="btn btn-outline-danger">

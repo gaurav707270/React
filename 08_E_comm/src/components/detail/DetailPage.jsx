@@ -8,6 +8,7 @@ export default function DetailPage() {
         <div>
             <h1>detail page</h1>
             <h2>{state.state.price}</h2>
+            <h2>{state.state.name}</h2>
         </div>
     )
 }

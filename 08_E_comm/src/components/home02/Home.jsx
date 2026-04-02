@@ -26,10 +26,26 @@ export default function Home() {
 
 
 
-  const addTOCart = (value) => {
-    console.log("function are calling ")
+  // const addTOCart = (value) => {
+  //   console.log("function are calling ")
+  //   const cartList = JSON.parse(localStorage.getItem("cart")) || [];
+  //   cartList.push(value);
+  //   localStorage.setItem("cart", JSON.stringify(cartList));
+  // };
+
+  const addToCart = (value) => {
     const cartList = JSON.parse(localStorage.getItem("cart")) || [];
-    cartList.push(value);
+
+    const res = cartList.findIndex((item) => item.name === value.name);
+
+    if (res == -1) {
+      cartList.push(value)
+
+    }
+
+    if (res !== -1) {
+      cartList[res].qty++;
+    }
     localStorage.setItem("cart", JSON.stringify(cartList));
   };
 
@@ -39,8 +55,7 @@ export default function Home() {
         <div className='container-fluid d-flex justify-content-center bg-black'>
           <div className=' container row  justify-content-center bg-dark'>
             {
-              products.map((product, i) => <ProductsCard key={i} name={product.title} image={product.images[0]} category={product.category} price={product.price} addTOCact={addTOCart} />)
-
+              products.map((product, i) => <ProductsCard key={i} name={product.title} image={product.images[0]} category={product.category} price={product.price} addToCart={addToCart} />)
             }
           </div>
         </div>

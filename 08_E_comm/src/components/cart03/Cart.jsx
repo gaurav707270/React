@@ -1,36 +1,67 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function Cart() {
 
-  const [products, setProducts] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+  const [products, setProducts] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
-  const removeCart = () => {
-    const [carts, setCarts] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
 
-  }
 
+  const removeCart = (index) => {
+    const updatedProducts = products.filter((_, i) => i !== index);
+
+    setProducts(updatedProducts);
+    localStorage.setItem("cart", JSON.stringify(updatedProducts));
+  };
+
+  const [total, setTotal] = useState(0);
+
+
+  const countTotal = () => {
+    const sum = products.reduce((acc, item) => {
+      return acc + item.price * item.qty;
+    }, 0);
+
+    setTotal(sum);
+  };
+
+  useEffect(() => {
+    countTotal();
+  }, [products]);
 
   return (
     <>
       <div className='container-fluid d-flex justify-content-center bg-black '>
-        <div className=' container row  justify-content-center bg-dark'>
+        <div className='container row justify-content-center bg-dark '>
           {
             products.map((product, i) =>
-              <div key={i} className="card m-2 " style={{ width: 250, height: 400 }}>
-                <img style={{ height: 200 }} src={product.images[0]} className="card-img-top" alt="..." />
+              <div key={i} className="card m-2" style={{ width: 250, height: 450 }}>
+                <img style={{ height: 200 }} src={product.image} className="card-img-top" alt="image" />
                 <div className="card-body">
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.category}</p>
                   <p className="card-text"> ${product.price}</p>
-                  <button href="#" onClick={() => addTOCart(product)} className="btn btn-outline-danger">
+                  <p className="card-text">Qty: {product.qty}</p>
+
+
+                  <button
+                    className="btn btn-outline-danger"
+                    onClick={() => removeCart(i)}
+                  >
                     Remove
                   </button>
+
                 </div>
               </div>
             )
-
           }
+        </div>
+
+        <div className='bg-dark w-25'>
+          <h1 className='text-white text-center'>Total Amount</h1>
+          < p className=' text-white'> Price : {total}</p>
         </div>
       </div>
     </>

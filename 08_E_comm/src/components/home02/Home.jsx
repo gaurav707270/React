@@ -49,16 +49,56 @@ export default function Home() {
     localStorage.setItem("cart", JSON.stringify(cartList));
   };
 
+  const [search, setSearch] = useState("")
+
+  const searchProduct = () => {
+    //   const result = products.filter((product) => product.title === search)
+    //   console.log()
+
+    const result = products.filter((product) =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+
+    setProducts(result)
+  }
+
+
   return (
     <>
       <div>
+
+        <div className='bg-white py-1'>
+          <div className="input-group mb-3 container w-50 ">
+            <input
+
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+              className="form-control"
+              placeholder="Recipient’s username"
+              aria-label="Recipient’s username"
+              aria-describedby="button-addon2"
+            />
+            <button
+              onClick={searchProduct}
+              className="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              Button
+            </button>
+          </div>
+
+        </div>
+
         <div className='container-fluid d-flex justify-content-center bg-black'>
           <div className=' container row  justify-content-center bg-dark'>
             {
-              products.map((product, i) => <ProductsCard key={i} name={product.title} image={product.images[0]} category={product.category} price={product.price} addToCart={addToCart} />)
+              products.map((product, i) => <ProductsCard key={i} name={product.title} image={product.images[0]} des={product.description} dis={product.discountPercentage} stock={product.stock} category={product.category} price={product.price} addToCart={addToCart} />)
             }
           </div>
         </div>
+
       </div>
     </>
   )

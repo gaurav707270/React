@@ -56,7 +56,7 @@ export default function Home() {
     //   console.log()
 
     const result = products.filter((product) =>
-      product.name.toLowerCase().includes(search.toLowerCase())
+      product.title.toLowerCase().includes(search.toLowerCase())
     );
 
 
@@ -81,11 +81,20 @@ export default function Home() {
             />
             <button
               onClick={searchProduct}
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-primary"
               type="button"
               id="button-addon2"
             >
-              Button
+              Search
+            </button>
+
+            <button
+              onClick={() => window.location.reload()}
+              className="btn btn-outline-secondary"
+              type="submit"
+              id="button-addon2"
+            >
+              Reset
             </button>
           </div>
 

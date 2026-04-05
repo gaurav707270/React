@@ -63,12 +63,21 @@ export default function Home() {
     setProducts(result)
   }
 
+  const [isSort, setsort] = useState(false)
+
+  const sortProducts = () => {
+    setsort(!isSort)
+    const copy = [...products];
+    copy.sort((a, b) => (isSort) ? a.price - b.price : b.price - a.price);
+    setProducts(copy)
+  }
+
 
   return (
     <>
       <div>
 
-        <div className='bg-white py-1'>
+        <div className='bg- container py-1 items-center mt-3 d-none d-sm-block'>
           <div className="input-group mb-3 container w-50 ">
             <input
 
@@ -96,12 +105,24 @@ export default function Home() {
             >
               Reset
             </button>
+
+            <button
+              onClick={sortProducts}
+              className="btn btn-outline-warning"
+              type="submit"
+              id="button-addon2"
+            >
+              Sort
+            </button>
+
+
+
           </div>
 
         </div>
 
         <div className='container-fluid d-flex justify-content-center bg-black'>
-          <div className=' container row  justify-content-center bg-dark'>
+          <div className=' container row  justify-content-center bg-dark rounded rounded-3'>
             {
               products.map((product, i) => <ProductsCard key={i} name={product.title} image={product.images[0]} des={product.description} dis={product.discountPercentage} stock={product.stock} category={product.category} price={product.price} addToCart={addToCart} />)
             }

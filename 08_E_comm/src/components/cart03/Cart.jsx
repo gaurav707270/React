@@ -92,96 +92,131 @@ export default function Cart() {
   // };
 
   const incrementQty = (index) => {
-
-    console.log(updatedCart[index].qty)
-    const updatedCart = [...products];
-
-    updatedCart[index].qty += 1;
+    const updatedCart = products.map((item, i) =>
+      i === index ? { ...item, qty: item.qty + 1 } : item
+    );
 
     setProducts(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   const decrementQty = (index) => {
-    const updatedCart = [...products];
+    const updatedCart = products.map((item, i) =>
+      i === index && item.qty > 1
+        ? { ...item, qty: item.qty - 1 }
+        : item
+    );
 
-    if (updatedCart[index].qty > 1) {
-      updatedCart[index].qty -= 1;
-    }
     setProducts(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
+  const [isSort, setsort] = useState(false)
+
+  const sortProducts = () => {
+    console.log(isSort)
+    setsort(!isSort)
+    console.log(isSort)
+    const copy = [...products];
+    copy.sort((a, b) => (isSort) ? a.price - b.price : b.price - a.price);
+    setProducts(copy)
+  }
+
+
   return (
     <>
-      <div className='bg-white py-1'>
-        <div className="input-group mb-3 container w-50">
-          <input
-            onChange={(e) => setSearch(e.target.value)}
-            type="text"
-            className="form-control"
-            placeholder="Recipient’s username"
-            aria-label="Recipient’s username"
-            aria-describedby="button-addon2"
-          />
-          <button
-            onClick={searchProduct}
-            className="btn btn-outline-primary"
-            type="button"
-            id="button-addon2"
-          >
-            Search
-          </button>
+      <div className=''>
+        <div className='mt-3 py-1 d-none d-sm-block  '>
+          <div className="input-group mb-3 container w-50">
+            <input
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+              className="form-control"
+              placeholder="Recipient’s username"
+              aria-label="Recipient’s username"
+              aria-describedby="button-addon2"
+            />
+            <button
+              onClick={searchProduct}
+              className="btn btn-outline-primary"
+              type="button"
+              id="button-addon2"
+            >
+              Search
+            </button>
 
-          <button
-            onClick={() => window.location.reload()}
-            className="btn btn-outline-secondary"
-            type="submit"
-            id="button-addon2"
-          >
-            Reset
-          </button>
+            <button
+              onClick={() => window.location.reload()}
+              className="btn btn-outline-secondary"
+              type="submit"
+              id="button-addon2"
+            >
+              Reset
+            </button>
+
+            <button
+              onClick={sortProducts}
+              className="btn btn-outline-warning"
+              type="submit"
+              id="button-addon2"
+            >
+              Sort
+            </button>
+          </div>
         </div>
-      </div>
 
 
-      <div className='container-fluid d-flex justify-content-center bg-black  '>
+        <div className='container-fluid d-flex justify-content-center bg-black  '>
 
-        <div className='container row justify-content-center bg-dark '>
-          {
-            products.map((product, i) =>
-              <div key={i} className="card m-2 my-5" style={{ width: 290, height: 450 }}>
-                <img style={{ height: 200 }} src={product.image} className="card-img-top" alt="image" />
-                <div className="card-body">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">{product.category}</p>
-                  <p className="card-text"> ${product.price}</p>
+          <div className='container row justify-content-center bg-dark '>
+            {
+              products.map((product, i) =>
+                <div key={i} className="card m-2 my-5" style={{ width: 290, height: 450 }}>
+                  <img style={{ height: 200 }} src={product.image} className="card-img-top" alt="image" />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.name}</h5>
+                    <p className="card-text">{product.category}</p>
+                    <p className="card-text"> ${product.price}</p>
 
-                  <div className=' d-flex justify-content-between'>
-                    <p className="card-text">Qty: {product.qty}</p>
-                    <div >
-                      <button onClick={incrementQty} style={{ width: 50, height: 30 }} className='m-1 btn btn-outline-primary text-center '>++</button>
-                      <button onClick={decrementQty} style={{ width: 50, height: 30 }} className='m-1 btn btn-outline-danger text-center '>--</button>
+                    <div className=' d-flex justify-content-between'>
+                      <p className="card-text">Qty: {product.qty}</p>
+                      <div >
+                        <button
+                          onClick={() => incrementQty(i)}
+                          style={{ width: 50, height: 30 }}
+                          className='m-1 btn btn-outline-primary text-center'
+                        >
+                          ++
+                        </button>
+
+                        <button
+                          onClick={() => decrementQty(i)}
+                          style={{ width: 50, height: 30 }}
+                          className='m-1 btn btn-outline-danger text-center'
+                        >
+                          --
+                        </button>
+                      </div>
                     </div>
+
+
+                    <button
+                      className="btn btn-outline-danger my-2"
+                      onClick={() => removeCart(i)}
+                    >
+                      Remove
+                    </button>
+
                   </div>
-
-
-                  <button
-                    className="btn btn-outline-danger my-2"
-                    onClick={() => removeCart(i)}
-                  >
-                    Remove
-                  </button>
-
                 </div>
-              </div>
-            )
-          }
-        </div>
+              )
+            }
+          </div>
 
-        <div className='bg-dark w-25'>
-          <h1 className='text-white text-center'>Total Amount</h1>
-          < p className=' text-white'> Price : {total}</p>
+          <div className='bg-dark w-25'>
+            <h1 className='text-white text-center'>Total Amount</h1>
+            < p className=' text-white'> Price : {total}</p>
+          </div>
         </div>
       </div>
     </>

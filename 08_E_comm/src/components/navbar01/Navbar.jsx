@@ -3,6 +3,7 @@ import { useState } from "react";
 import logo from "../../assets/logo.png";
 
 
+
 export default function Navbar() {
 
   const [search, setSearch] = useState("");
@@ -16,8 +17,8 @@ export default function Navbar() {
   return (
     <div>
 
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-dark ">
+        <div className="container-fluid ">
 
 
 
@@ -34,26 +35,28 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon" />
+            <i class="ri-menu-line text-white"></i>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link active text-white" aria-current="page" href="/">
+                  <i class="ri-home-4-fill mx-1"></i>
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="/cart">
+                <a className="nav-link active text-white" href="/cart">
+                  <i class="ri-shopping-cart-fill mx-1"></i>
                   Cart
                 </a>
               </li>
 
-              <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
+              {/* <li className="nav-item">
+                <a className="nav-link disabled text-white" aria-disabled="true">
                   Disabled
                 </a>
-              </li>
+              </li> */}
             </ul>
 
           </div>

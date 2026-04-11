@@ -1,0 +1,11 @@
+{
+    "user" : [
+    {
+        "id" : 1,
+        "name" : "kharate gaurav",
+        "age" : 22,
+        "role" : "front"
+
+    }
+]
+}

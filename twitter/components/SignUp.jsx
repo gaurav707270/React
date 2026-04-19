@@ -83,7 +83,7 @@ export const SignUp = () => {
 
 
 
-      // alert("Form Sign Up Successfully ✅");
+      alert("Form Sign Up Successfully ✅");
     }
   }
 

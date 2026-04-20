@@ -1,9 +1,11 @@
 import React from 'react'
+import { AddTodo } from './components/AddTodo'
 
 export default function App() {
   return (
     <>
-      <h1>we learn rtk in react</h1>
+      <div>we learn redux tool kit</div>
+      <AddTodo />
     </>
   )
 }

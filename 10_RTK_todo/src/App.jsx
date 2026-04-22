@@ -1,11 +1,14 @@
-import React from 'react'
-import { AddTodo } from './components/AddTodo'
+import React from "react";
+import { AddTodo } from "./components/AddTodo";
+import TodoList from "./components/TodoList";
 
-export default function App() {
+function App() {
   return (
     <>
-      <div>we learn redux tool kit</div>
-      <AddTodo />
+      {/* <AddTodo /> */}
+      <TodoList />
     </>
-  )
+  );
 }
+
+export default App;

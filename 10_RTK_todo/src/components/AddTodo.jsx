@@ -1,181 +1,116 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { addTodo } from '../features/todo/TodoSlice'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../features/todo/TodoSlice";
 
 export const AddTodo = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    number: "",
+    password: ""
+  });
 
-  const [user, setUser] = useState({});
-  const [check, setcheck] = useState(false);
-  const [style, setstyle] = useState({ name: false, email: false, number: false, fees: false, password: false, })
+  const [check, setCheck] = useState(false);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const addTodoHandler = (e) => {
-
-    // const res = await axios.post(userApi, user)
-    // if (res.status == 201) {
-    //   alert("User Sign Up Successfully ✅")
-    // } else {
-    //   alert("User Cant SingUP")
-    // }
+    e.preventDefault();
 
 
-    e.preventDefault()
-
-    dispatch(addTodo(user))
-    setUser(" ")
-
-    const nameRegex = /^[A-Za-z ]{3,}$/;
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-    const phoneRegex = /^[0-9]{10}$/;
-    const feesRegex = /^(100[1-9]|10[1-9]\d|1[1-9]\d{2}|[2-9]\d{3,})$/;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
-
-    if (!user.name || user.name.trim() === "") {
-      setstyle({ ...style, name: true })
+    if (!user.name.trim()) {
       alert("Name is required!");
-
-      return false;
-    }
-    else if (!nameRegex.test(user.name)) {
-      alert("Name must contain only letters (min 3 characters)");
-      return false;
+      return;
     }
 
-    if (!user.email || user.email.trim() === "") {
-      setstyle({ ...style, email: true })
-      alert("Email is required !")
-      return false;
-
+    if (!user.email.trim()) {
+      alert("Email is required!");
+      return;
     }
 
-    else if (!emailRegex.test(user.email)) {
-      alert("email must stornge ")
-      return false;
-    }
-
-
-    if (!feesRegex.test(user.number)) {
-      alert("Enter a valid fees greater than 1000!");
-      return false;
-    }
-
-
-    if (!user.number || user.number.trim() === "") {
-      setstyle({ ...style, number: true })
+    if (!user.number.trim()) {
       alert("Phone number is required!");
-      return false;
-    }
-    else if (!phoneRegex.test(user.number)) {
-      alert("Enter a valid 10-digit number!");
-      return false;
+      return;
     }
 
-    if (!user.password || user.password.trim() === "") {
-      setstyle({ ...style, number: true })
+    if (!user.password.trim()) {
       alert("Password is required!");
-      return false;
-    }
-    else if (!passwordRegex.test(user.password)) {
-      alert("Password must be at least 6 characters, include uppercase, lowercase, and number");
-      return false;
+      return;
     }
 
-    else {
+
+    dispatch(addTodo(user));
+
+    alert("Form Submitted ✅");
 
 
-
-
-
-      alert("Form Sign Up Successfully ✅");
-    }
-  }
-
-
+    setUser({
+      name: "",
+      email: "",
+      number: "",
+      password: ""
+    });
+  };
 
   return (
-    < >
-      <div className='container-fluid d-flex justify-content-center  align-items-center vh-75 mt-5   '>
-        <div className=' w-50 d-flex justify-content-center align-items-center '>
+    <div className="container vh-100 d-flex justify-content-center align-items-center">
+      <form onSubmit={addTodoHandler} className="p-4 shadow rounded bg-white w-25">
 
-          <form style={{ width: 450, }} onSubmit={handleSignUp} className=' shadow p-3 rounded rounded-4 bg-white'>
-            <div className="mb-3">
-
-              {/*Full name*/}
-              <label htmlFor="name" className="d-flex">
-                Full Name
-              </label>
-              <input
-                onChange={(e) => setUser({ ...user, name: e.target.value })}
-                type="text"
-                className={`form-control ${style.name == false ? "" : " border-danger"}`}
-                id="name"
-                aria-describedby="emailHelp"
-              />
-            </div>
-
-            {/* Email  */}
-            <div className="mb-3 bg-white">
-              <label htmlFor="email" className="d-flex">
-                Email address
-              </label>
-              <input
-                onChange={(e) => setUser({ ...user, email: e.target.value })}
-                type="email"
-                className={`form-control ${style.email == false ? "" : " border-danger"}`}
-                id="email"
-                aria-describedby="emailHelp"
-              />
-              <div id="emailHelp" className="form-text">
-                We'll never share your email with anyone else.
-              </div>
-            </div>
-
-            {/* contact */}
-            <div className="mb-3">
-              <label htmlFor="contact" className="d-flex">
-                Contact
-              </label>
-              <input
-                onChange={(e) => setUser({ ...user, number: e.target.value })}
-                type="Number"
-                className={`form-control ${style.number == false ? "" : " border-danger"}`}
-                id="number"
-                aria-describedby="emailHelp"
-              />
-              <div id="emailHelp" className="form-text">
-                We'll never share your contact with anyone else.
-              </div>
-            </div>
+        <h3 className="mb-3">Signup Form</h3>
 
 
+        <input
+          type="text"
+          placeholder="Full Name"
+          className="form-control mb-3"
+          value={user.name}
+          onChange={(e) => setUser({ ...user, name: e.target.value })}
+        />
 
-            {/* password */}
-            <div className="mb-3">
-              <label htmlFor="Password" className="d-flex">
-                Password
-              </label>
-              <input
-                onChange={(e) => setUser({ ...user, password: e.target.value })}
-                type="password"
-                className="form-control"
-                id="Password"
-              />
-            </div>
-            <div className="mb-3 form-check">
-              <input type="checkbox" checked={check} onChange={() => setcheck(!check)} className="form-check-input" id="exampleCheck1" />
-              <label className="form-check-label" htmlFor="exampleCheck1">
-                Check After Reading All Term & Condition
-              </label>
-            </div>
-            <button type="submit" className={`btn btn-primary ${check ? "" : "disabled"}`}>
-              Submit
-            </button>
-          </form>
+
+        <input
+          type="email"
+          placeholder="Email"
+          className="form-control mb-3"
+          value={user.email}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+
+
+        <input
+          type="text"
+          placeholder="Phone Number"
+          className="form-control mb-3"
+          value={user.number}
+          onChange={(e) => setUser({ ...user, number: e.target.value })}
+        />
+
+
+        <input
+          type="password"
+          placeholder="Password"
+          className="form-control mb-3"
+          value={user.password}
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
+        />
+
+
+        <div className="form-check mb-3">
+          <input
+            type="checkbox"
+            checked={check}
+            onChange={() => setCheck(!check)}
+            className="form-check-input"
+          />
+          <label className="form-check-label">
+            Accept Terms & Conditions
+          </label>
         </div>
-      </div>
 
-    </>
-  )
-}
-
+        <button type="submit" className="btn btn-primary" disabled={!check}>
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+};

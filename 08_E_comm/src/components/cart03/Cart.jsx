@@ -168,7 +168,7 @@ export default function Cart() {
 
         <div className='container-fluid d-flex justify-content-center bg-black  '>
 
-          <div className='container row justify-content-center bg-dark '>
+          <div className='container row justify-content-center bg-dark flex-wrap '>
             {
               products.map((product, i) =>
                 <div key={i} className="card m-2 my-5" style={{ width: 290, height: 450 }}>
@@ -201,7 +201,7 @@ export default function Cart() {
 
 
                     <button
-                      className="btn btn-outline-danger my-2"
+                      className="btn btn-outline-danger my-2 w-100"
                       onClick={() => removeCart(i)}
                     >
                       Remove

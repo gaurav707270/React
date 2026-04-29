@@ -1,0 +1,200 @@
+body {
+  background-color: rgb(255, 250, 243);
+}
+
+.light-orange {
+  background-color: rgb(254, 235, 157);
+}
+
+.cart {
+  width: 300px;
+  height: 400px;
+  transition-property: all;
+  transition-duration: 1s;
+}
+
+.cart_image {
+  width: 300px;
+  height: 300px;
+}
+
+.work_cart {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  margin: 3px;
+  border-radius: 15px;
+  padding: 3px;
+}
+
+.banner_color {
+  background-color: rgb(252, 252, 252);
+}
+
+.banner_color01 {
+  background-color: rgb(255, 255, 255);
+}
+
+button:active {
+  scale: 0.8;
+}
+
+.active:active {
+  scale: 0.8;
+}
+
+.cart_hover {
+  transition-property: all;
+  transition-duration: 1s;
+}
+
+.cart_hover:hover {
+  scale: 1.07;
+}
+
+.bg-parpal {
+  background-color: #816e96;
+}
+
+.bg-light-parpal {
+  background-color: rgb(245, 238, 248);
+}
+
+.bg-brown {
+  background-color: rgb(155, 118, 100);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Blog Hero Section */
+.bg-light.py-5 {
+  background: linear-gradient(135deg, #f8f9fa, #ffe8d6);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Blog Image Hover Zoom */
+.col-lg-8 img {
+  transition: transform 0.5s ease;
+}
+
+.col-lg-8 img:hover {
+  transform: scale(1.05);
+}
+
+/* Card Hover Effect */
+.card {
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Effect */
+.btn-dark {
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #ff4d6d;
+  border-color: #ff4d6d;
+  transform: scale(1.05);
+}
+
+/* Newsletter Animation */
+.banner_color01 {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Sidebar List Hover */
+.list-group-item:hover {
+  background-color: #ffe8d6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Blockquote Style */
+.blockquote {
+  font-style: italic;
+  background: #fff3cd;
+  border-radius: 10px;
+}
+
+/* ===============================
+   7. FLOATING ANIMATION
+================================ */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+gradient-bg {
+  background: linear-gradient(-45deg, #ff416c, #ff4b2b, #1e3c72, #2a5298);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*
+   2. GLASSMORPHISM CARD
+*/
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.4s;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}

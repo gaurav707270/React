@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link, useNavigate } from "react-router"
 
 export default function Navbar() {
+
+  const [search, setSearch] = useState("");
+
+  const Navgate = useNavigate()
+
+  const handleSearch = () => {
+    if (search.trim() == "") return alert("Enter The Product Name")
+    navigate(`/shop?search=${search}`);
+  }
+
   return (
     <div>
       <>
@@ -22,11 +33,14 @@ export default function Navbar() {
                 placeholder=""
                 aria-label="Example text with button addon"
                 aria-describedby="button-addon1"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
               <button
                 className="btn btn-outline-secondary"
                 type="button"
                 id="button-addon1"
+                onClick={handleSearch}
               >
                 Button
               </button>
@@ -172,7 +186,7 @@ export default function Navbar() {
                                   </a>
                                 </li>
                                 <li>
-                                  <a className="dropdown-item" href="/Home_02">
+                                  <a className="dropdown-item" href="/home02">
                                     Home02
                                   </a>
                                 </li>
@@ -296,7 +310,7 @@ export default function Navbar() {
                                 <li>
                                   <a
                                     className="dropdown-item"
-                                    href="http://127.0.0.1:5500/sign-up.html"
+                                    href="/register"
                                   >
                                     {" "}
                                     Sign Up
@@ -305,7 +319,7 @@ export default function Navbar() {
                                 <li>
                                   <a
                                     className="dropdown-item"
-                                    href="http://127.0.0.1:5500/login.html"
+                                    href="/login"
                                   >
                                     {" "}
                                     Login
@@ -328,7 +342,7 @@ export default function Navbar() {
                         </li>
                         <li className="nav-item active mt-2">
                           <a
-                            href="http://127.0.0.1:5500/Contact.html"
+                            href="/contact"
                             className="btn btn-secondary w-100 m-2 active"
                           >
                             Contact
@@ -352,7 +366,7 @@ export default function Navbar() {
                       </div>
                     </div>
                   </div>
-                  
+
                 </div>
               </nav>
               <div></div>

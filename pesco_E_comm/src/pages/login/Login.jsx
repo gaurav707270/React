@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Login() {
   return (
-    <div>
+    <div className='mt-5'>
       <div className="container d-flex justify-content-center align-items-center h-75">
         <div className="card shadow p-4" style={{ width: 400 }}>
           <h3 className="text-center mb-4">Login</h3>

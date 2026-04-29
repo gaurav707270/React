@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Registeration() {
   return (
-    <div>
+    <div className='mt-5'>
       <div className="container d-flex justify-content-center align-items-center h-75">
         <div className="card shadow p-4" style={{ width: 450 }}>
           <h3 className="text-center mb-4">Create Account</h3>

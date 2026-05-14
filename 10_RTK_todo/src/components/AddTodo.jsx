@@ -17,6 +17,8 @@ export const AddTodo = () => {
   const addTodoHandler = (e) => {
     e.preventDefault();
 
+    dispatch(addTodo())
+
 
     if (!user.name.trim()) {
       alert("Name is required!");

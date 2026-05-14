@@ -18,7 +18,7 @@ const userslice = createSlice({
     initialState: state,
     extraReducers: (builder) => {
         builder.addCase(fetchUsers.pending, (state) => {
-            state.status = "pending"; // extra space hata diya
+            state.status = "pending"; 
         });
 
         builder.addCase(fetchUsers.fulfilled, (state, action) => {

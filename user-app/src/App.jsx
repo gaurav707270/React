@@ -12,7 +12,10 @@ export default function App() {
     };
 
     const deleteUser = (i) => {
-        setAllUser()
+        const temp = [...allUser]
+        temp.splice(i, 1)
+        setAllUser(temp
+        )
     }
 
     return (

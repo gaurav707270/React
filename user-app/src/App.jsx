@@ -14,8 +14,7 @@ export default function App() {
     const deleteUser = (i) => {
         const temp = [...allUser]
         temp.splice(i, 1)
-        setAllUser(temp
-        )
+        setAllUser(temp)
     }
 
     return (

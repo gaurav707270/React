@@ -2,54 +2,46 @@ import React from 'react'
 
 export default function UserInput() {
     return (
-        <div>
-            <div className='container vh-100 '>
-                <div className='w-100'>
-                    <form className='d-flex w-60  justify-content-center justify-content-between'>
-                        <div className="mb-3 ">
-                            <label htmlFor="exampleInputEmail1" className="form-label text-white">
-                                add task
-                            </label>
-                            <input style={{ width: "350px" }}
-                                type="email"
+        <div className="container py-5">
+            <div
+                className="card shadow-lg border-0 mx-auto"
+                style={{ maxWidth: "900px" }}
+            >
+                <div className="card-body p-4">
+                    <h2 className="text-center fw-bold mb-4">
+                        📝 Task Manager
+                    </h2>
+
+                    <div className="row g-3 align-items-center">
+                        {/* Task Input */}
+                        <div className="col-md-5">
+                            <input
+                                type="text"
                                 className="form-control"
-                                id="exampleInputEmail1"
-                                aria-describedby="emailHelp"
+                                placeholder="Enter your task..."
                             />
-
                         </div>
-                        <div>
-                            <label htmlFor="exampleInputEmail1" className="form-label text-white">
-                                add Priority
-                            </label>
 
-                            <select style={{ width: "350px" }}
-                                className="form-select"
-                                aria-label="Default select example"
-                                id="todo_priority"
-                                value=""
-                            >
-                                <option selected="" value="Default">
-                                    select priority
-                                </option>
-                                <option value="high">high</option>
-                                <option value="medium">medium</option>
-                                <option value="low">low</option>
+                        {/* Priority */}
+                        <div className="col-md-4">
+                            <select className="form-select">
+                                <option value="">Select Priority</option>
+                                <option value="High">🔴 High</option>
+                                <option value="Normal">🟡 Normal</option>
+                                <option value="Low">🟢 Low</option>
                             </select>
                         </div>
 
-
-                        <div>
-                            <button type="submit" className="btn btn-primary">
-                                Submit
+                        {/* Button */}
+                        <div className="col-md-3">
+                            <button className="btn btn-primary w-100">
+                                + Add Task
                             </button>
                         </div>
-                    </form>
-
-
+                    </div>
                 </div>
-
             </div>
+
         </div>
-    )
+        )
 }

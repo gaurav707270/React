@@ -1,25 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function App() {
-  const [inputText, setInputText] = useState("")
-  const [inputPriority, setInputPriority] = useState("")
-  const [todos, setTodos] = useState([])
+  const [inputText, setInputText] = useState("");
+  const [inputPriority, setInputPriority] = useState("");
 
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todos")) || []
+  );
 
-  const saveTodos = () => {
-    localStorage.setItem("todos", JSON.stringify(todos))
-  }
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
-  const getTodos = () => {
-    return JSON.parse(localStorage.getItem("todos")) || []
-  }
+  const addTask = () => {
+    if (!inputText || !inputPriority) {
+      alert("Please enter task and priority");
+      return;
+    }
 
-  const allTodos = getTodos()
-  console.log(allTodos)
+    const newTodo = {
+      id: Date.now(),
+      text: inputText,
+      priority: inputPriority,
+    };
 
-  const [todoList, setTodoList] = useState(allTodos)
+    setTodos([...todos, newTodo]);
 
+    setInputText("");
+    setInputPriority("");
+  };
 
+  const deleteTask = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+  };
 
   return (
     <div>
@@ -39,7 +53,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Form Card */}
+      {/* Form */}
       <div className="container py-5">
         <div
           className="card shadow-lg border-0 mx-auto"
@@ -52,32 +66,33 @@ export default function App() {
 
             <div className="row g-3">
               <div className="col-md-5">
-                <input onChange={(e) => {
-                  setInputText(e.target.value)
-                }}
+                <input
                   type="text"
                   className="form-control"
                   placeholder="Enter Task"
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
                 />
               </div>
 
               <div className="col-md-4">
-                <select className="form-select" onClick={(e) => {
-                  setInputPriority(e.target.value)
-                }}>
-                  <option>Select Priority</option>
-                  <option>🔴 High</option>
-                  <option>🟡 Medium</option>
-                  <option>🟢 Low</option>
+                <select
+                  className="form-select"
+                  value={inputPriority}
+                  onChange={(e) => setInputPriority(e.target.value)}
+                >
+                  <option value="">Select Priority</option>
+                  <option value="High">🔴 High</option>
+                  <option value="Medium">🟡 Medium</option>
+                  <option value="Low">🟢 Low</option>
                 </select>
               </div>
 
               <div className="col-md-3">
-                <button className="btn btn-primary w-100" onClick={() => {
-                  console.log(todos)
-                  setTodos([...todos, { inputText, inputPriority }])
-                  saveTodos()
-                }}>
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={addTask}
+                >
                   + Add Task
                 </button>
               </div>
@@ -91,60 +106,47 @@ export default function App() {
           style={{ maxWidth: "900px" }}
         >
           <div className="card-body">
-            <div className="d-flex justify-content-between align-items-center mb-3">
-              <h4 className="fw-bold">Your Tasks</h4>
+            <h4 className="fw-bold mb-3">Your Tasks</h4>
 
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search Task..."
-                style={{ width: "250px" }}
-              />
-            </div>
-
-            {/* Task Item */}
-            {
-              todoList.map((todo) => {
-                return <div className="border rounded p-3 mb-3 d-flex justify-content-between align-items-center">
+            {todos.length === 0 ? (
+              <p className="text-center text-muted">
+                No Tasks Available
+              </p>
+            ) : (
+              todos.map((todo) => (
+                <div
+                  key={todo.id}
+                  className="border rounded p-3 mb-3 d-flex justify-content-between align-items-center"
+                >
                   <div>
-                    <h6 className="mb-1">Complete React Project</h6>
-                    <span className="badge bg-danger">High</span>
+                    <h6 className="mb-1">{todo.text}</h6>
+
+                    <span
+                      className={`badge ${todo.priority === "High"
+                          ? "bg-danger"
+                          : todo.priority === "Medium"
+                            ? "bg-warning text-dark"
+                            : "bg-success"
+                        }`}
+                    >
+                      {todo.priority}
+                    </span>
                   </div>
 
-                  <div className="d-flex gap-2">
-                    <button className="btn btn-warning btn-sm">
-                      Edit
-                    </button>
-                    <button className="btn btn-danger btn-sm">
+                  <div>
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => deleteTask(todo.id)}
+                    >
                       Delete
                     </button>
                   </div>
                 </div>
-              })
-            }
-
-
-
+              ))
+            )}
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-
-{/* <div className="border rounded p-3 mb-3 d-flex justify-content-between align-items-center">
-              <div>
-                <h6 className="mb-1">Complete React Project</h6>
-                <span className="badge bg-danger">High</span>
-              </div>
-
-              <div className="d-flex gap-2">
-                <button className="btn btn-warning btn-sm">
-                  Edit
-                </button>
-                <button className="btn btn-danger btn-sm">
-                  Delete
-                </button>
-              </div>
-            </div> */}

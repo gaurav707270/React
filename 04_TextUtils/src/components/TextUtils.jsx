@@ -18,7 +18,7 @@ const TextUtils = () => {
     return < >
         <div className="container">
             <div className="text-center">
-                <h2 > Text-Utils Example</h2>
+                <h2 > Text-Utils </h2>
             </div>
 
             <div className=" p-5">

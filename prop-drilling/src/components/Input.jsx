@@ -22,6 +22,9 @@ export default function input({ text, setText }) {
                         className="btn btn-outline-secondary"
                         type="button"
                         id="button-addon2"
+                        onClick={() => {
+                            setNewTexte(text)
+                        }}
                     >
                         Button
                     </button>
@@ -29,7 +32,7 @@ export default function input({ text, setText }) {
 
             </div>
 
-            <Display text={text} setText={setText} />
+            <Display newText={newText} setNewText={setNewTexte} />
         </div>
     )
 }

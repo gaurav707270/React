@@ -36,7 +36,10 @@ export default function Login() {
     }
 
     return (
-        <div className=' w-100 d-flex justify-content-center align-items-center'>
+        <div className=' vh-100 w-100 d-flex justify-content-center align-items-center flex-column'>
+            <h2 className='my-3'>
+                Login
+            </h2>
             <form className='shadow p-5 rounded' style={{ width: "400px" }}>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">

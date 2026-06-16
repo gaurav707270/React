@@ -10,7 +10,7 @@ import Login from './screen/Login';
 export default function App() {
   return (
     <>
-      <Navbar />
+      
       <Routes>
         <Route path='/' element={<Login />}></Route>
         <Route path='/home' element={<Home />}></Route>

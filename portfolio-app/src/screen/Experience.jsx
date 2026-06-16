@@ -1,125 +1,100 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 export default function Experience() {
-  const experiences = [
-    {
-      year: "2018 - Present",
-      role: "Back-End Developer",
-      company: "Tripian Inc.",
-      location: "Remote (Toronto, Canada)",
-      desc: "Core team member. Backend with PHP/Python, API design, React/Vue.js frontend, AWS infrastructure.",
-    },
-    {
-      year: "2016 - Present",
-      role: "Full-Stack Developer",
-      company: "RadKod",
-      location: "Freelance/Open Source",
-      desc: "Founded developer collective. Flutter apps, web games, backend services. Active GitHub contributor.",
-    },
-    {
-      year: "2015 - 2017",
-      role: "Back-End Developer",
-      company: "AvantajBizde",
-      location: "Izmir, Turkey",
-      desc: "C2C e-commerce platform with Laravel, ORM, and domain-driven design.",
-    },
-    {
-      year: "2015",
-      role: "Back-End Developer",
-      company: "Promega",
-      location: "Izmir, Turkey",
-      desc: "PHP backend modules, algorithm and data structure implementation.",
-    },
-    {
-      year: "2014 - 2015",
-      role: "Back-End Developer",
-      company: "TurkWebAjans",
-      location: "Izmir, Turkey",
-      desc: "Client websites using classic ASP and Adobe Flash. Junior developer role.",
-    },
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Bootstrap",
+    "React.js",
+    "Git",
+    "GitHub",
+    "Node.js",
   ];
 
-  const skills = [
-    "PHP",
-    "Python",
-    "Node.js",
-    "Laravel",
-    "Django",
-    "React",
-    "Vue.js",
-    "Next.js",
-    "Flutter",
-    "React Native",
-    "AWS",
-    "Docker",
-    "PostgreSQL",
-    "MongoDB",
-    "Redis",
-    "Git",
+  const experiences = [
+    {
+      year: "2026",
+      role: "React Developer",
+      company: "Personal Projects",
+      desc: "Built multiple React applications including Todo App, Text Utils, Portfolio Website and E-Commerce UI.",
+    },
+    {
+      year: "2025",
+      role: "Frontend Development Learning",
+      company: "Self Learning",
+      desc: "Learned HTML, CSS, JavaScript, Bootstrap and React.js through practical projects.",
+    },
   ];
 
   return (
-    <div style={{ height: "100vh" }}
-      className="container p-5 overflow-y-scroll"
-      style={{ background: "#F5F1E8", minHeight: "100vh" }}
-    >
-      <div className="mb-5">
-        <h1
+    <div className="d-flex">
+      <Navbar />
 
-        >
-          Experience
-        </h1>
-
-        <p className="fs-4 text-secondary">
-          8+ years building scalable web applications
-        </p>
-      </div>
-
-      <div className="mb-5">
-        <h3 className="mb-4">Primary Stack</h3>
-
-        <div className="d-flex flex-wrap gap-3">
-          {skills.map((skill, i) => (
-            <span
-              key={i}
-              className="px-4 py-2 rounded-pill border bg-white"
-
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-5">
-        {experiences.map((exp, i) => (
-          <div
-            key={i}
-            className="card border-0 shadow-sm mb-4"
-            style={{
-              borderRadius: "20px",
-            }}
+      <div
+        className="container-fluid min-vh-100 p-5"
+      >
+        <div className="mb-5">
+          <h1
+            className="display-3 fw-bold"
+            style={{ color: "#2d2d2d" }}
           >
-            <div className="card-body p-4">
-              <div className="row">
-                <div className="col-md-3">
-                  <h6 className="text-muted">{exp.year}</h6>
-                </div>
+            Experience
+          </h1>
 
-                <div className="col-md-9">
-                  <h4>{exp.role}</h4>
+          <p
+            className="fs-4"
+          >
+            Learning, Building & Growing as a Frontend Developer
+          </p>
+        </div>
 
-                  <h6 className="text-secondary">
-                    {exp.company} • {exp.location}
-                  </h6>
-
-                  <p className="mt-3 text-muted">{exp.desc}</p>
-                </div>
-              </div>
+        <div className="row mb-5">
+          <div className="col-md-4 mb-3">
+            <div className="experience-card text-center p-4">
+              <h2>5+</h2>
+              <p>Projects Completed</p>
             </div>
           </div>
-        ))}
+
+          <div className="col-md-4 mb-3">
+            <div className="experience-card text-center p-4">
+              <h2>8+</h2>
+              <p>Technologies Learned</p>
+            </div>
+          </div>
+
+          <div className="col-md-4 mb-3">
+            <div className="experience-card text-center p-4">
+              <h2>1+</h2>
+              <p>Year Learning</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p>
+            <h3> 2025</h3>
+
+            <h2>
+              Frontend Development Intern
+              Maxima Gaming Studio
+            </h2>
+
+            <h5 className="mt-3">
+              <p>• Developed responsive web interfaces using React.js</p>
+              <p> • Worked with HTML, CSS and JavaScript</p>
+              <p> • Improved UI/UX and application performance</p>
+              <p> • Collaborated on real-world development projects</p>
+            </h5>
+          </p>
+        </div>
+
+
+
       </div>
     </div>
+
   );
 }

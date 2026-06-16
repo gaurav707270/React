@@ -1,4 +1,4 @@
-import profile from '../../assets/about.png'
+import profile from "../../assets/Code Structure Fix_files/profile.jpeg";
 
 export const About = () => {
     return (

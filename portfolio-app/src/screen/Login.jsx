@@ -21,6 +21,8 @@ export default function Login() {
 
     const checkUser = () => {
         if (user.email == newUser.email && user.password == newUser.password) {
+            localStorage.setItem("email", user.email)
+            localStorage.setItem("password", user.password)
             navigate("/Home")
             alert(hjdwwhj)
         }

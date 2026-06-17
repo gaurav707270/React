@@ -1,38 +1,25 @@
 import React, { useState, useEffect } from 'react'
+import Login from "../screen/Login";
 
 const user = {
     email: "sachinkharate2004@gmail.com",
     password: "sachin7072"
 }
 
-
 export default function ProtectedRoute({ children }) {
 
-    let newEmail
-    let newPassword
-
-    const getUserPassword = () => {
-        newEmail = localStorage.getItem("email")
-        newPassword = localStorage.getItem("passwprd")
-
-    }
+    const [newEmail, setNewEmail] = useState("")
+    const [newPassword, setNewPassword] = useState("")
 
     useEffect(() => {
-        getUserPassword
+        setNewEmail(localStorage.getItem("email"))
+        setNewPassword(localStorage.getItem("password"))
     }, [])
 
-
-    if (user.email == newEmail && user.password == newPassword) {
-        return <>
-            {children}
-        </>
+    if (user.email === newEmail && user.password === newPassword) {
+        return <>{children}</>
     }
 
-    return (
-        <div>
-            {
-                children
-            }
-        </div>
-    )
+    return <Login/>
+       
 }

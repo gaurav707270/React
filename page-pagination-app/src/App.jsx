@@ -17,6 +17,9 @@ export default function App() {
     handleFetchImage()
   }, [])
 
+  const [page, setPage] = useState({ start: 0, page: 1, end: 9 })
+
+  
 
 
   return (

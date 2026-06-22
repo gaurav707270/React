@@ -15,7 +15,7 @@ export default function App() { // yahha par hamne ek app naam kaa function decl
     const data = await res.json(); // par res string formate mai hai iseliye hamnw res ko string maise json function kaa use kar ke object banaake array ke adhar storge karke data mai storge kiyaa
 
     // Optional: sirf first 500 images
-    setAllImages(data.slice(0, 500));  // setAllImage naam ke method se maine data ki value maine allImages ko diyaa
+    setAllImages(data);  // setAllImage naam ke method se maine data ki value maine allImages ko diyaa
   };
 
   useEffect(() => { // useEffect kaa use jab hoogaa tab aappnaa page rerender hogaa or tab fetchData naam kaa function call hooga

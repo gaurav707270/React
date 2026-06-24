@@ -60,7 +60,7 @@ export default function App() {
                 the card’s content.
               </p>
               <a href="#" className="btn btn-primary">
-                Go somewhere
+                View More
               </a>
             </div>
           </div>

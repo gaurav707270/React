@@ -6,10 +6,12 @@ const url = "https://dummyjson.com/products"
 export default function App() {
 
   const [allProducts, setAllProducts] = useState([])
+  const [storge, setStorge] = useState([])
 
   const fetchProducts = async () => {
     const res = await axios.get(url)
     setAllProducts(res.data.products)
+    setStorge(res.data.products)
     console.log(allProducts)
   }
 
@@ -29,11 +31,24 @@ export default function App() {
       fetchProducts()
     }
     else {
-      setAllProducts(allProducts.filter(product =>
+      setAllProducts(storge.filter(product =>
         product.title.toLowerCase().includes(search.toLowerCase())
       ))
     }
     // console.log(allProducts)
+  }
+
+  const categoryfilter = (e) => {
+    setAllProducts(storge.filter((product) => product.category == e.target.value))
+    console.log(e.target.value)
+  }
+
+  const [price, setPrice] = useState(1)
+
+  const pricefilter = (e) => {
+    setAllProducts(storge.filter((product) => Number(product.price) <= Number(e.target.value)))
+    console.log(e.target.value)
+    setPrice(e.target.value)
   }
 
 
@@ -45,6 +60,30 @@ export default function App() {
         <div className='d-flex align-items-center justify-content-center'>
           <input onChange={searchProducts} className='p-1 rounded mx-2' type="text" placeholder='Search Products' />
           <button onClick={handleSearch} className='btn btn-outline-primary'>Search</button>
+          <button onClick={fetchProducts} className='btn btn-outline-info mx-2'>Refresh</button>
+
+          <div>
+            <div className="container   ">
+              <div className="row justify-content-center">
+
+
+                <select onChange={categoryfilter} className="form-select shadow-sm">
+                  <option defaultValue="">
+                    Select Category
+                  </option>
+                  <option value="beauty">💄 Beauty</option>
+                  <option value="fragrances">🌸 Fragrances</option>
+                  <option value="furniture">🛋️ Furniture</option>
+                  <option value="groceries">🛒 Groceries</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <input onChange={pricefilter} min={1} max={2500} type="range" className=' mx-2 ' />
+            <p className='p-0'>Range : {price}</p>
+          </div>
         </div>
 
       </div>

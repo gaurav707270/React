@@ -19,7 +19,6 @@ export default function Products() {
 
   return (
     <div>
-      <h1>dtgvhbj</h1>
       {
         allProducts.map((product) => <div>
           <div className=" mt-5">

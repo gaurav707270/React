@@ -1,0 +1,157 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "iPhone 15",
+            "category": "Mobile",
+            "price": 79999,
+            "stock": 20,
+            "image": "https://picsum.photos/200?1"
+        },
+        {
+            "id": 2,
+            "title": "Samsung Galaxy S24",
+            "category": "Mobile",
+            "price": 74999,
+            "stock": 15,
+            "image": "https://picsum.photos/200?2"
+        },
+        {
+            "id": 3,
+            "title": "MacBook Air M3",
+            "category": "Laptop",
+            "price": 114999,
+            "stock": 10,
+            "image": "https://picsum.photos/200?3"
+        },
+        {
+            "id": 4,
+            "title": "Dell Inspiron 15",
+            "category": "Laptop",
+            "price": 59999,
+            "stock": 12,
+            "image": "https://picsum.photos/200?4"
+        },
+        {
+            "id": 5,
+            "title": "Sony Headphones",
+            "category": "Accessories",
+            "price": 8999,
+            "stock": 30,
+            "image": "https://picsum.photos/200?5"
+        },
+        {
+            "id": 6,
+            "title": "Boat Rockerz 450",
+            "category": "Accessories",
+            "price": 1499,
+            "stock": 50,
+            "image": "https://picsum.photos/200?6"
+        },
+        {
+            "id": 7,
+            "title": "Apple Watch Series 9",
+            "category": "Smart Watch",
+            "price": 39999,
+            "stock": 18,
+            "image": "https://picsum.photos/200?7"
+        },
+        {
+            "id": 8,
+            "title": "Noise ColorFit Pro",
+            "category": "Smart Watch",
+            "price": 2999,
+            "stock": 35,
+            "image": "https://picsum.photos/200?8"
+        },
+        {
+            "id": 9,
+            "title": "iPad Air",
+            "category": "Tablet",
+            "price": 54999,
+            "stock": 14,
+            "image": "https://picsum.photos/200?9"
+        },
+        {
+            "id": 10,
+            "title": "Samsung Galaxy Tab",
+            "category": "Tablet",
+            "price": 32999,
+            "stock": 16,
+            "image": "https://picsum.photos/200?10"
+        }
+    ],
+
+    "users": [
+    {
+      "id": 1,
+      "name": "Rahul Sharma",
+      "email": "rahul@gmail.com",
+      "age": 22,
+      "city": "Mumbai"
+    },
+    {
+      "id": 2,
+      "name": "Priya Patel",
+      "email": "priya@gmail.com",
+      "age": 24,
+      "city": "Ahmedabad"
+    },
+    {
+      "id": 3,
+      "name": "Amit Verma",
+      "email": "amit@gmail.com",
+      "age": 21,
+      "city": "Pune"
+    },
+    {
+      "id": 4,
+      "name": "Sneha Gupta",
+      "email": "sneha@gmail.com",
+      "age": 23,
+      "city": "Delhi"
+    },
+    {
+      "id": 5,
+      "name": "Vikas Singh",
+      "email": "vikas@gmail.com",
+      "age": 25,
+      "city": "Lucknow"
+    },
+    {
+      "id": 6,
+      "name": "Anjali Mehta",
+      "email": "anjali@gmail.com",
+      "age": 20,
+      "city": "Jaipur"
+    },
+    {
+      "id": 7,
+      "name": "Rohan Joshi",
+      "email": "rohan@gmail.com",
+      "age": 26,
+      "city": "Surat"
+    },
+    {
+      "id": 8,
+      "name": "Kavya Nair",
+      "email": "kavya@gmail.com",
+      "age": 22,
+      "city": "Bangalore"
+    },
+    {
+      "id": 9,
+      "name": "Arjun Kumar",
+      "email": "arjun@gmail.com",
+      "age": 27,
+      "city": "Chennai"
+    },
+    {
+      "id": 10,
+      "name": "Neha Yadav",
+      "email": "neha@gmail.com",
+      "age": 24,
+      "city": "Hyderabad"
+    }
+  ]
+}

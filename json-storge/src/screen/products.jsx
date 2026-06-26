@@ -20,7 +20,7 @@ export default function Products() {
   return (
     <div>
       {
-        allProducts.map((product) => <div>
+        allProducts.map((product, i) => <div key={i}>
           <div className=" mt-5">
             <div className="row justify-content-center">
               <div className="col-md-4">

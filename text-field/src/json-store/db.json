@@ -1,3 +1,15 @@
 {
-    "textList" : []
+  "textList": [
+    {
+      "email": "sachinkharate2004@gmail.com",
+      "role": "Sachin",
+      "id": "lds1X7oCruA"
+    },
+    {
+      "email": "sachinkharate2004@gmail.com",
+      "role": "Sachin",
+      "id": "8KbAhQxhX08"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

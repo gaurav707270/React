@@ -17,6 +17,26 @@ export default function Text() {
         fetchTextList()
     }, [])
 
+    const [userInfo, setUserInfo] = useState({})
+
+    const getUserEmail = (e) => {
+        setUserInfo({ ...userInfo, email: e.target.value })
+    }
+
+    const getUserRole = (e) => {
+        setUserInfo({ ...userInfo, role: e.target.value })
+    }
+
+    const getUserPassword = (e) => {
+        setUserInfo({ ...userInfo, password: e.target.value })
+    }
+
+    const handleSetInfoJson = () => {
+        setTextList([...textList, userInfo])
+        console.log(textList)
+
+    }
+
     return (
         <div>
             <nav className="navbar navbar-dark bg-dark">
@@ -35,39 +55,42 @@ export default function Text() {
             </nav>
 
             {/* form section */}
-            <div>
-                <div className="form-floating mb-3">
+            <div className='container d-flex justify-content-evenly my-3  align-items-center'>
+                <div className="form-floating mb-3 w-25">
                     <input
+                        onChange={getUserEmail}
                         type="email"
-                        className="form-control"
+                        className="form-control shadow"
                         id="floatingInput"
                         placeholder="name@example.com"
                     />
                     <label htmlFor="floatingInput">Email address</label>
                 </div>
 
-                <div className="form-floating mb-3">
+                <div className="form-floating mb-3 w-25">
                     <input
+                        onChange={getUserRole}
                         type="text"
-                        className="form-control"
+                        className="form-control shadow"
                         id="floatingInput"
                         placeholder="role"
                     />
-                    <label htmlFor="floatingInput">Email address</label>
+                    <label htmlFor="floatingInput">Job Role</label>
                 </div>
 
-                <div className="form-floating">
+                <div className="form-floating mb-3 w-25">
                     <input
+                        onChange={getUserPassword}
                         type="password"
-                        className="form-control"
+                        className="form-control shadow"
                         id="floatingPassword"
                         placeholder="Password"
                     />
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
 
-                <div>
-                    <button>Submite</button>
+                <div className='mt-2 d-flex align-items-center mb-3'>
+                    <button className='btn btn-outline-primary ' onClick={handleSetInfoJson}>Submite</button>
                 </div>
 
             </div>

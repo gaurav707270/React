@@ -1,4 +1,25 @@
 {
-  "textList": [],
+  "textList": [
+    {
+      "email": "sachinkharate2004@gmail.com",
+      "role": "rdrcgfv",
+      "password": "tfgvh",
+      "id": "RfVJK2F_hhQ"
+    },
+    {
+      "email": "sachinkharate2004@gmail.com",
+      "role": "rdrcgfv",
+      "password": "tfgvh",
+      "colorCode": "#3498db",
+      "id": "LwJCLQw1zBI"
+    },
+    {
+      "email": "sachinkharate2004@gmail.com",
+      "role": "rdrcgfv",
+      "password": "tfgvh",
+      "colorCode": "#11ACD5",
+      "id": "V_OwyvrS3ak"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

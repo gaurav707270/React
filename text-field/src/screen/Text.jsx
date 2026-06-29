@@ -65,6 +65,22 @@ export default function Text() {
         console.log("handle update")
     }
 
+    const [color, setColor] = useState("#3498db");
+
+    const generateRandomColor = () => {
+        const letters = "0123456789ABCDEF";
+        let randomColor = "#";
+
+        for (let i = 0; i < 6; i++) {
+            randomColor += letters[Math.floor(Math.random() * 16)];
+        }
+
+        setColor(randomColor);
+        setUserInfo({ ...userInfo, colorCode: color })
+        console.log(color)
+    };
+
+
     return (
         <div>
             <nav className="navbar navbar-dark bg-dark">
@@ -127,9 +143,11 @@ export default function Text() {
                             if (isUpdate) {
                                 handleUpdateUser();
                                 fetchTextList();
+                                generateRandomColor()
                             } else {
                                 handleSetInfoJson();
                                 fetchTextList();
+                                generateRandomColor()
                             }
                         }}
                     >
@@ -143,9 +161,9 @@ export default function Text() {
             <div className="container mt-4">
                 <div className="row">
                     {textList.map((user, i) => (
-                        <div className="col-md-6 col-lg-4 mb-4" key={i}>
-                            <div className="card shadow-sm h-100">
-                                <div className="card-body">
+                        <div className="col-md-6 col-lg-4 mb-4" key={i} >
+                            <div className="card shadow-sm h-100" style={{ backgroundColor: user.colorCode }} >
+                                <div className="card-body ">
                                     <h5 className="card-title mb-3">{user.email}</h5>
 
                                     <p className="mb-2">

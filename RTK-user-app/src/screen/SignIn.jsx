@@ -4,6 +4,22 @@ import { useSelector } from "react-redux";
 
 
 export default function SignIn() {
+
+  const navigate = useNavigate()
+  const { user } = useSelector((state) => state.auth)
+  const emailRef = useRef("")
+  const passwordRef = useRef("")
+
+  const handleUserSignIn = () => {
+    if (emailRef.current.value == user.email && passwordRef.current.value == user.password) {
+      navigate("/users")
+    }
+    else {
+      alert("email & password is wrong !");
+    }
+  }
+
+
   return (
     <div className='container d-flex justify-content-center align-items-center vh-100 flex-column'>
       <h1 className='my-4'> SingIn</h1>
@@ -14,7 +30,7 @@ export default function SignIn() {
             Email
           </label>
           <div className="">
-            <input type="email" className="form-control" id="inputEmail3" />
+            <input type="email" ref={emailRef} className="form-control" id="inputEmail3" />
           </div>
         </div>
         <div className=" mb-3">
@@ -22,7 +38,7 @@ export default function SignIn() {
             Password
           </label>
           <div className="">
-            <input type="password" className="form-control" id="inputPassword3" />
+            <input type="password" ref={passwordRef} className="form-control" id="inputPassword3" />
           </div>
         </div>
 
@@ -32,7 +48,9 @@ export default function SignIn() {
             checkbox
           </label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" onClick={() => {
+          handleUserSignIn()
+        }} className="btn btn-primary">
           SignUp
         </button>
 

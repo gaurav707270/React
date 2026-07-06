@@ -1,21 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const authSlice = createSlice({
   name: "auth",
   initialState: {
-    user: {
-      email: "",
-      password: "",
-    },
+    user: 
+      [],
+    
   },
   reducers: {
-    signUpRed: (state, action) => {
-      state.user = action.payload;
-    },
+    // signUpRed: (state, action) => {
+    //   state.user = action.payload;
+    // },
 
-    signInRed: (state, action) => {
-      // login logic
-    },
+    // signInRed: (state, action) => {
+    //   // login logic
+    // },
+  },
+  extraReducers: (builder) =>{
+builder.addCase(() =>{
+  
+})
   },
 });
 

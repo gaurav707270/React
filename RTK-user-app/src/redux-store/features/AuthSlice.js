@@ -1,12 +1,20 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const addUser = createAsyncThunk("post/addUser", async (userData) => {
+  const res = await axios.post("http://localhost:3000/users",userData)
+  return res.data
+
+})
+
 const authSlice = createSlice({
   name: "auth",
   initialState: {
-    user: 
-      [],
-    
+    user: [],
+    loading: false,
+    error: null,
+
+
   },
   reducers: {
     // signUpRed: (state, action) => {
@@ -17,10 +25,10 @@ const authSlice = createSlice({
     //   // login logic
     // },
   },
-  extraReducers: (builder) =>{
-builder.addCase(() =>{
-  
-})
+  extraReducers: (builder) => {
+    builder.addCase(() => {
+
+    })
   },
 });
 

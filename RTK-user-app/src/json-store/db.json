@@ -11,5 +11,8 @@
       "id": "fb9mysNC4Tk"
     }
   ],
+
+  "allUserData" : [],
+  
   "$schema": "./node_modules/json-server/schema.json"
 }

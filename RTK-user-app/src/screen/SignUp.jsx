@@ -1,24 +1,27 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { signUpRed } from "../redux-store/features/AuthSlice.js";
-import { Link } from "react-router";
-import { useNavigate } from 'react-router'
+import { useNavigate } from "react-router";
+import { addUser } from "../redux-store/features/AuthSlice.js";
 
 export default function SignUp() {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const userData = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
+
+    console.log(userData)
+
     dispatch(
-      signUpRed({
-        email: emailRef.current.value,
-        password: passwordRef.current.value,
-      })
+      addUser(userData)
     );
   };
 
@@ -69,7 +72,7 @@ export default function SignUp() {
         </div>
 
         <button
-          type="button"
+          type="submite"
           className="btn btn-primary"
           onClick={() => navigate("/")}
         >

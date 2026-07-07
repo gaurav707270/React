@@ -1,23 +1,41 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Link, useNavigate } from "react-router";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 
 export default function SignIn() {
 
   const navigate = useNavigate()
-  const { user } = useSelector((state) => state.auth)
+  // const { user } = useSelector((state) => state.auth)
   const emailRef = useRef("")
   const passwordRef = useRef("")
 
-  const handleUserSignIn = () => {
-    if (emailRef.current.value == user.email && passwordRef.current.value == user.password) {
-      navigate("/users")
-    }
-    else {
-      alert("email & password is wrong !");
-    }
+  let users = []
+
+  const fetchUserData = async () => {
+    const res = await axios.get("http://localhost:3000/users")
+    users = res.data
   }
+
+  useEffect(() => {
+    fetchUserData()
+  }, [])
+
+  const handleUserSignIn = () => {
+    
+    const matchedUser = users.find(
+      (user) =>
+        user.email === emailRef.current.value &&
+        user.password === passwordRef.current.value
+    );
+
+    if (matchedUser) {
+      navigate("/users");
+    } else {
+      alert("Email or password is wrong!");
+    }
+  };
 
 
   return (

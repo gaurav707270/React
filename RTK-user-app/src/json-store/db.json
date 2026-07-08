@@ -11,9 +11,8 @@
       "id": "fb9mysNC4Tk"
     }
   ],
-
-  "allUserData" : [
-     {
+  "allUserData": [
+    {
       "email": "sachinkharate2004@gmail.com",
       "password": "12345",
       "id": "yr0X52yboWw"
@@ -22,8 +21,17 @@
       "email": "gauravkharate2004@gmail.com",
       "password": "12345",
       "id": "fb9mysNC4Tk"
+    },
+    {
+      "email": "sachinkharate2004@gmail.com",
+      "password": "854154564",
+      "id": "Je6xQW5kDvs"
+    },
+    {
+      "email": "gauravkharate2004@gmail.com",
+      "password": "789874",
+      "id": "urlEa2RcBTk"
     }
   ],
-  
   "$schema": "./node_modules/json-server/schema.json"
 }

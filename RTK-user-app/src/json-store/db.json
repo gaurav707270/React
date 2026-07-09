@@ -13,24 +13,19 @@
   ],
   "allUserData": [
     {
-      "email": "sachinkharate2004@gmail.com",
-      "password": "12345",
-      "id": "yr0X52yboWw"
+      "email": "gauravkharate2004@gmail.com",
+      "password": "ufrjufv",
+      "id": "XTMm9CNt4Bo"
     },
     {
       "email": "gauravkharate2004@gmail.com",
-      "password": "12345",
-      "id": "fb9mysNC4Tk"
+      "password": "ufrjufv",
+      "id": "qzANKqFcdho"
     },
     {
       "email": "sachinkharate2004@gmail.com",
-      "password": "854154564",
-      "id": "Je6xQW5kDvs"
-    },
-    {
-      "email": "gauravkharate2004@gmail.com",
-      "password": "789874",
-      "id": "urlEa2RcBTk"
+      "password": "848544",
+      "id": "6fOj56Y4maw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

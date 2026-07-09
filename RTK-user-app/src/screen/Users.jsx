@@ -1,117 +1,167 @@
-import React, { useState, useEffect, useRef } from 'react'
-import axios from "axios"
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
 
 export default function Users() {
-
-  const [allUser, setAllUser] = useState([])
+  const [allUser, setAllUser] = useState([]);
 
   // fetching data
   const fetchUserData = async () => {
-    const res = await axios.get("http://localhost:3000/allUserData")
-    setAllUser(res.data)
-  }
+    const res = await axios.get("http://localhost:3000/allUserData");
+    setAllUser(res.data);
+  };
 
-  // create new user variabl
-  const userEmailRef = useRef(null)
-  const userPasswordRef = useRef(null)
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  // create new user variable
+  const userEmailRef = useRef(null);
+  const userPasswordRef = useRef(null);
 
   // post new user data
   const postNewUserData = async (newUser) => {
-    const res = await axios.post("http://localhost:3000/allUserData", newUser)
-  }
+    await axios.post("http://localhost:3000/allUserData", newUser);
 
-  // nosubmite submite function
+    fetchUserData();
+
+    userEmailRef.current.value = "";
+    userPasswordRef.current.value = "";
+  };
+
+  // submit function
   const handleSubmite = () => {
-
     const newUser = {
       email: userEmailRef.current.value,
-      password: userPasswordRef.current.value
-    }
+      password: userPasswordRef.current.value,
+    };
 
-    postNewUserData(newUser)
-    console.log(newUser)
-  }
+    postNewUserData(newUser);
+  };
 
   // remove user function
+  const removeUser = (user) => {
+    deleteUserData(user.id);
+  };
 
-  let index = null
+  const deleteUserData = async (id) => {
+    await axios.delete(`http://localhost:3000/allUserData/${id}`);
+    fetchUserData();
+  };
 
-  const removeUser = (i) => {
-    index = i
+  // update user data function
 
-    setAllUser(allUser.filter((user, i) => i != index))
-    console.log(allUser)
-  }
+  const [editId, setEditId] = useState(null);
+  const [isUpdate, setIsUpdate] = useState(false);
 
-  const putUserData = async (allUser) => {
-    const res = await axios.put("http://localhost:3000/allUserData/1", allUser);
-  }
+  const editUser = (user) => {
+    setEditId(user.id);
+    setIsUpdate(true);
 
+    userEmailRef.current.value = user.email;
+    userPasswordRef.current.value = user.password;
+  };
 
+  const putUserData = async () => {
+    const updatedUser = {
+      email: userEmailRef.current.value,
+      password: userPasswordRef.current.value,
+    };
 
-  useEffect(() => {
-    fetchUserData()
-    putUserData()
-  }, [])
+    await axios.put(
+      `http://localhost:3000/allUserData/${editId}`,
+      updatedUser
+    );
+
+    fetchUserData();
+
+    setEditId(null);
+    setIsUpdate(false);
+
+    userEmailRef.current.value = "";
+    userPasswordRef.current.value = "";
+  };
+
   return (
-    <div className='container'>
+    <div className="container">
       <div className="container d-flex justify-content-center mt-3">
         <div
           className="card shadow-lg border-0 rounded-4 p-4"
-          style={{ maxWidth: "700px", width: "100%" }}
+          style={{ maxWidth: "880px", width: "100%" }}
         >
-          <h2 className="text-center  fw-bold text-primary">
-            Add New User
+          <h2 className="text-center fw-bold text-primary">
+            {isUpdate ? "Update User" : "Add New User"}
           </h2>
 
-          <form onSubmit={handleSubmite} className="row g-4" >
-            {/* Email */}
-            <div className="col-md-5">
-              <label className="form-label fw-semibold">
-                <i className="bi bi-envelope-fill me-2"></i>
-                Email
-              </label>
+          <form>
+            <div className=" g-4 d-flex  ">
+              {/* Email */}
+              <div className="col-md-5">
+                <label className="form-label fw-semibold">
+                  <i className="bi bi-envelope-fill me-2"></i>
+                  Email
+                </label>
 
-              <input
-                ref={userEmailRef}
-                type="email"
-                className="form-control form-control-lg"
-                placeholder="Enter Email"
-              />
-            </div>
+                <input
+                  style={{
+                    width: "290px"
+                  }}
+                  ref={userEmailRef}
+                  type="email"
+                  className="form-control form-control-lg"
+                  placeholder="Enter Email"
+                />
+              </div>
 
-            {/* Password */}
-            <div className="col-md-5">
-              <label className="form-label fw-semibold">
-                <i className="bi bi-lock-fill me-2"></i>
-                Password
-              </label>
+              {/* Password */}
+              <div className="col-md-5">
+                <label className="form-label fw-semibold">
+                  <i className="bi bi-lock-fill me-2"></i>
+                  Password
+                </label>
 
-              <input
-                ref={userPasswordRef}
-                type="password"
-                className="form-control form-control-lg"
-                placeholder="Enter Password"
-              />
-            </div>
+                <input
+                  style={{
+                    width: "290px"
+                  }}
+                  ref={userPasswordRef}
+                  type="password"
+                  className="form-control form-control-lg"
+                  placeholder="Enter Password"
+                />
+              </div>
 
-            {/* Button */}
-            <div className="col-md-2 d-grid align-self-end">
-              <button className="btn btn-primary btn-lg">
-                <i className="bi bi-person-plus-fill me-2"></i>
-                Add
-              </button>
+              {/* Button */}
+              <div style={{ width: "180px" }} className=" d-flex mt-3" >
+                {isUpdate ? (
+                  <button
+                    style={{ height: "40px" }}
+                    type="button"
+                    className="btn btn-warning mt-3"
+                    onClick={putUserData}
+                  >
+                    Update
+                  </button>
+                ) : (
+                  <button
+                    style={{ height: "40px" }}
+                    type="button"
+                    className="btn btn-primary mt-3"
+                    onClick={handleSubmite}
+                  >
+                    Add User
+                  </button>
+                )}
+              </div>
             </div>
           </form>
         </div>
       </div>
 
-
-
       <div className="container mt-3">
         <div className="card shadow-lg border-0 rounded-4">
           <div className="card-header bg-dark text-white d-flex justify-content-between align-items-center">
             <h3 className="mb-0">👥 All Users</h3>
+
             <span className="badge bg-primary fs-6">
               Total Users: {allUser.length}
             </span>
@@ -126,13 +176,12 @@ export default function Users() {
                 <h5 className="text-muted">No Users Found 😔</h5>
               </div>
             ) : (
-              allUser.map((user, i) => (
+              allUser.map((user) => (
                 <div
                   key={user.id}
                   className="card shadow-sm border-0 rounded-3 mb-3"
                 >
                   <div className="card-body d-flex justify-content-between align-items-center flex-wrap">
-
                     <div className="d-flex align-items-center">
                       <div
                         className="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center me-3"
@@ -148,6 +197,7 @@ export default function Users() {
 
                       <div>
                         <h5 className="mb-1">{user.email}</h5>
+
                         <p className="text-muted mb-0">
                           🔒 {user.password}
                         </p>
@@ -155,18 +205,20 @@ export default function Users() {
                     </div>
 
                     <div className="mt-3 mt-md-0">
-                      <button className="btn btn-warning me-2">
+                      <button
+                        className="btn btn-warning mx-2"
+                        onClick={() => editUser(user)}
+                      >
                         ✏️ Update
                       </button>
 
-                      <button onClick={() => {
-                        removeUser(i)
-
-                      }} className="btn btn-danger">
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => removeUser(user)}
+                      >
                         🗑 Remove
                       </button>
                     </div>
-
                   </div>
                 </div>
               ))
@@ -175,5 +227,5 @@ export default function Users() {
         </div>
       </div>
     </div>
-  )
+  );
 }

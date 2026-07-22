@@ -37,7 +37,7 @@ const authSlice = createSlice({
       state.users.push(action.payload)
 
     });
-    builder.addCase(addUser.rejected,(state,action) =>{
+    builder.addCase(addUser.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message;
 

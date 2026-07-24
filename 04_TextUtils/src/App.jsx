@@ -1,11 +1,11 @@
-// import TextUtils  from "./components/TextUtils";
+import TextUtils  from "./components/TextUtils";
 
 
-// const App = () =>{
-//   return <>
-//   <TextUtils/> 
-//   </>
-// }
+const App = () =>{
+  return <>
+  <TextUtils/> 
+  </>
+}
 
 
-// export default App;
+export default App;

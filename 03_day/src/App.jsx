@@ -5,7 +5,7 @@ import Products from "./components/Products";
 import Fourits from "./components/fruits-list";
 
 const App = () => {
-  // return (
+  return (
     <div>
       {/* <Products /> */}
       {/* <Counter /> */}

@@ -8,7 +8,7 @@
   // return (
     <div>
       {/* <Products /> */}
-      <Counter />
+      {/* <Counter /> */}
       {/* <Fruits /> */}
     {/* </div> */}
   );

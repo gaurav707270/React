@@ -7,7 +7,7 @@ import Fourits from "./components/fruits-list";
 const App = () => {
   return (
     <div>
-      /* {/* /* {/* /* {/* /* {/* <Products /> */} */ */} */ */} */ */} */
+      { <Products /> 
       {/* <Counter /> */}
       {/* <Fruits /> */}
     {/* </div> */}

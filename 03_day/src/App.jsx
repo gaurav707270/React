@@ -10,7 +10,7 @@
       {/* <Products /> */}
       <Counter />
       {/* <Fruits /> */}
-    </div>
+    {/* </div> */}
   );
 };
 

@@ -1,7 +1,7 @@
 // import TextUtils  from "./components/TextUtils";
 
 
-// const App = () =>{
+const App = () =>{
   return <>
 {/* <TextUtils/>  } */}
 

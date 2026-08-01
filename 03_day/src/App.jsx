@@ -7,7 +7,7 @@
 // const App = () => {
   // return (
     <div>
-      <Products /> 
+      {/* <Products />  */}
       <Counter /> 
       <Fruits />
     </div> 

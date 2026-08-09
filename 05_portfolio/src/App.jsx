@@ -5,7 +5,7 @@
 // import { Skills } from "./components/05_Skills_section/Skills";
 // import { Projects } from "./components/06_Projects_section/Projects";
 // import { Contact } from "./components/07_Contact_section/Contact";
-import { Footer } from "./components/08_Footer_section/Footer";
+// import { Footer } from "./components/08_Footer_section/Footer";
 
 export const App = () => {
   return (

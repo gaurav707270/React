@@ -1,4 +1,4 @@
-// import { Navbar } from "./components/01_Navbar_section/Navbar";
+import { Navbar } from "./components/01_Navbar_section/Navbar";
 // import { Hero } from "./components/02_Hero_section/Hero";
 // import { About } from "./components/03_About_section/About";
 import { Education } from "./components/04_Education_section/Education";

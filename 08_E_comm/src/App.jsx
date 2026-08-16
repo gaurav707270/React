@@ -6,7 +6,7 @@ import Cart from './components/cart03/Cart';
 // import DetailPage from './components/detail/DetailPage';
 
 
-// export default function App() {
+export default function App() {
   // return (
     <>
       <Navbar />

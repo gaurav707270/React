@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import Home from './components/home02/Home';
 import Cart from './components/cart03/Cart';
 import Navbar from './components/navbar01/Navbar';

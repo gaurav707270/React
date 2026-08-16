@@ -3,7 +3,7 @@
 // import Home from './components/home02/Home';
 // import Cart from './components/cart03/Cart';
 // import Navbar from './components/navbar01/Navbar';
-import DetailPage from './components/detail/DetailPage';
+// import DetailPage from './components/detail/DetailPage';
 
 
 // export default function App() {

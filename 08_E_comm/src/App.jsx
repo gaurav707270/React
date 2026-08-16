@@ -7,7 +7,7 @@ import DetailPage from './components/detail/DetailPage';
 
 
 export default function App() {
-  // return (
+  return (
     <>
       <Navbar />
       <Routes>

@@ -6,7 +6,7 @@ const App = () => {
        <h1>  
     hii gaurav  
        </h1> 
-    {/* </div> */}
+     </div>
   )
  } 
 

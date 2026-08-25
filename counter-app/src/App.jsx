@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 export function App() {
 
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   // return (
     <div className='d-flex justify-content-center align-items-center flex-column vh-100'>

@@ -4,7 +4,7 @@
 
   // const [count, setCount] = useState(0);
 
-  return (
+  // return (
     <div className='d-flex justify-content-center align-items-center flex-column vh-100'>
       <h1 className='fs-1 text-white '>{count}</h1>
       <div>

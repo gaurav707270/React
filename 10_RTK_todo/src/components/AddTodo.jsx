@@ -4,7 +4,7 @@ import { addTodo } from "../features/todo/TodoSlice";
 // 
 export const AddTodo = () => {
   const [user, setUser] = useState({
-    name: "",
+    // name: "",
     email: "",
     number: "",
     password: ""

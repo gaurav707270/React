@@ -11,7 +11,7 @@ const TextUtils = () => {
     }, [])
 
     const [text, setText] = useState("");
-    // const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
     const [countWords, setCountWord] = useState(0);
     const [second, setSecond] = useState(0);
 

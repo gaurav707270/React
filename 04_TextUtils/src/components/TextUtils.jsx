@@ -8,7 +8,7 @@ const TextUtils = () => {
         setCount(localStorage.getItem("count") ?? 0)
         setCountWord(localStorage.getItem("word ") ?? 0)
         setSecond(localStorage.getItem("second") ?? 0)
-    }, [])
+    // }, [])
 
     const [text, setText] = useState("");
     // const [count, setCount] = useState(0);

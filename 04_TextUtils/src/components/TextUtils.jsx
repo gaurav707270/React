@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const TextUtils = () => {
 
     useEffect(() => {
-        // setText(localStorage.getItem("text") ?? "")
+        setText(localStorage.getItem("text") ?? "")
         setCount(localStorage.getItem("count") ?? 0)
         setCountWord(localStorage.getItem("word ") ?? 0)
         setSecond(localStorage.getItem("second") ?? 0)
